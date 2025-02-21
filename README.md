@@ -304,3 +304,137 @@ Here we have a working API that we can add products to:
 
 ![image](https://github.com/user-attachments/assets/6e0c72df-f7e3-422c-b627-8696f624b7ec)
 ![image](https://github.com/user-attachments/assets/ce839899-bbb4-4d03-bb95-d87ef736accb)
+
+
+###Create a GitHub repository so we can use it for a CI/CD pipeline to the Multicloud Enviroment.
+
+Created a public repository on github called "cloudmart", then in the CLI:
+
+echo "# cloudmart" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/Goodka7/cloudmart.git
+git push -u origin main
+
+Generate a password token on GitHub for the last step and use that token for the password to push the origin.
+![image](https://github.com/user-attachments/assets/6ae9dfe9-a235-46e9-8fe8-29104c350a8b)
+
+Use the token in the password field.
+![image](https://github.com/user-attachments/assets/f9e7ad8a-f98c-49ab-9501-8a44579a9f4a)
+![image](https://github.com/user-attachments/assets/aa85b7ca-de78-4353-b552-d5e544af5c36)
+
+Add git files to the repository.
+
+git add -A
+git commit -m "app sent to repo"
+![image](https://github.com/user-attachments/assets/4ab3478b-7e7c-474c-9fbf-fc3f11548c5d)
+
+git push
+![image](https://github.com/user-attachments/assets/856ef0a9-ee39-43cf-ab33-a7c035b64b62)
+![image](https://github.com/user-attachments/assets/6ac42db8-6fe1-42b7-a1fc-3204e6505e8b)
+
+Create the Codepipeline
+
+Access AWS CodePipeline.
+Start the 'Create pipeline' process.
+Name: `cloudmart-cicd-pipeline`
+Use the GitHub repository `cloudmart` as the source.
+![image](https://github.com/user-attachments/assets/1aaaca58-98bb-4fdf-80f0-750c92373937)
+
+//--> Normally you would choose the GitHub (GitHub App) authetication, but because this is a lab we are going to use OAUTH.
+Use the GitHub Branch `main` as the source.
+
+Set build provider to "Other build providers" and select `AWSCodeBuild`
+Make sure `SourceArtifact` is set for Input Artifact
+![image](https://github.com/user-attachments/assets/93dc4d91-02c1-48f1-b083-8b0b8b8ec3c4)
+
+
+Click "Create Project"
+
+Give the project the name cloudmartBuild.
+Select amazonlinux-x86_64-standard:4.0 as the Image.
+![image](https://github.com/user-attachments/assets/588c0023-4ad2-454d-9fe6-5b046e5208f2)
+
+Configure the environment to support Docker builds by checking "Enable this flag if you want to build Docker images or want your builds to get elevated privileges"
+![image](https://github.com/user-attachments/assets/5e015e61-dc48-4e0c-be58-860a490f528a)
+
+Add the environment variable **ECR_REPO** with the ECR front end repository URI. //---> Do NOT use :latest as this will give you an error.
+![image](https://github.com/user-attachments/assets/0bb21ca3-2033-400c-a431-b5f2ecf7d65b)
+
+For the build specification:
+
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      docker: 20
+  pre_build:
+    commands:
+      - echo Logging in to Amazon ECR...
+      - aws --version
+      - REPOSITORY_URI=$ECR_REPO
+      - aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/f8g6e7z8
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Building the Docker image...
+      - docker build -t $REPOSITORY_URI:latest .
+      - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$CODEBUILD_RESOLVED_SOURCE_VERSION
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - echo Pushing the Docker image...
+      - docker push $REPOSITORY_URI:latest
+      - docker push $REPOSITORY_URI:$CODEBUILD_RESOLVED_SOURCE_VERSION
+      - export imageTag=$CODEBUILD_RESOLVED_SOURCE_VERSION
+      - printf '[{\"name\":\"cloudmart-app\",\"imageUri\":\"%s\"}]' $REPOSITORY_URI:$imageTag > imagedefinitions.json
+      - cat imagedefinitions.json
+      - ls -l
+
+env:
+  exported-variables: ["imageTag"]
+
+artifacts:
+  files:
+    - imagedefinitions.json
+    - cloudmart-frontend.yaml
+
+//--> The "project build creator" will ask you if you're okay to "Leave" the site, and suggests your options won't be saved, click "Leave".
+
+![image](https://github.com/user-attachments/assets/02e20878-63c9-436d-b418-20cce7416b2a)
+
+Click "Create Pipeline"
+
+Set permission AmazonElasticContainerRegistryPublicFullAccess for role created by the pipeline process, in IAM.
+![image](https://github.com/user-attachments/assets/f09789d2-60d1-48af-98cd-5f8213fed46c)
+
+Continue through by skipping the next few screens with "Next", it will be the Test and Deploy screens (likely).
+
+The pipeline will execute the build.
+![image](https://github.com/user-attachments/assets/865dd6d4-0e26-4361-8444-fc311e75ac49)
+
+//---> The "build" portion will fail if you do not set up the permission in the role before running, if so, just run again.
+
+Next we need to set up the deployment, click "Edit" on the pipeline page.
+
+After "build" click "+Add Stage".
+![image](https://github.com/user-attachments/assets/2bf9a7bd-9d39-4aa7-83be-a71fac81976d)
+![image](https://github.com/user-attachments/assets/eea203f2-9ac1-44a8-9720-ebfbb51f3aea)
+
+Click "add action group".
+![image](https://github.com/user-attachments/assets/97523f5e-2ab3-49e2-93d4-77bdb5307497)
+
+Once all this information is entered, click "Create project"
+Title the project: cloudmartDeployToProduction
+Scroll down to image and make sure amazonlinux-x86_64-standard:4.0 is selected.
+We will create two Enviromental Variables: AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY so we can authenticate to the Kubernetes cluster.
+You will need to enter the access key values for the eksuser that we created earlier, however you can create new keys if you lost them.
+![image](https://github.com/user-attachments/assets/53deaeb5-2bd8-462d-bd1f-a5e8dfee8393)
+
+Scroll down to build spec and click "switch to Editor":
+
+
+
+//---> Normally you would not do this in a production environment as it doesn't follow security best practices.
