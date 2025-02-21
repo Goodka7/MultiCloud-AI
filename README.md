@@ -433,8 +433,67 @@ We will create two Enviromental Variables: AWS_ACCESS_KEY_ID and AWS_SECRET_ACCE
 You will need to enter the access key values for the eksuser that we created earlier, however you can create new keys if you lost them.
 ![image](https://github.com/user-attachments/assets/53deaeb5-2bd8-462d-bd1f-a5e8dfee8393)
 
+//---> Normally you would not do this in a production environment as it doesn't follow security best practices.
+
 Scroll down to build spec and click "switch to Editor":
 
+version: 0.2
 
+phases:
+  install:
+    runtime-versions:
+      docker: 20
+    commands:
+      - curl -o kubectl https://amazon-eks.s3.us-west-2.amazonaws.com/1.18.9/2020-11-02/bin/linux/amd64/kubectl
+      - chmod +x ./kubectl
+      - mv ./kubectl /usr/local/bin
+      - kubectl version --short --client
+  post_build:
+    commands:
+      - aws eks update-kubeconfig --region us-west-2 --name cloudmart
+      - kubectl get nodes
+      - ls
+      - IMAGE_URI=$(jq -r '.[0].imageUri' imagedefinitions.json)
+      - echo $IMAGE_URI
+      - sed -i "s|CONTAINER_IMAGE|$IMAGE_URI|g" cloudmart-frontend.yaml
+      - kubectl apply -f cloudmart-frontend.yaml
 
-//---> Normally you would not do this in a production environment as it doesn't follow security best practices.
+This build script allows for the kubernetes to search the imagedefinitions.json file to find the current imageUri, then then change the value of the Uri variable inside cloudmart-frontend.yaml
+However, we currently have the value hard coded and do not have a variable in place.
+
+nano cloudmart-frontend.yaml
+
+Change the hardcoded value to CONTAINER_IMAGE.
+![image](https://github.com/user-attachments/assets/3ee566f1-28fe-4e97-a438-69b4a3446ab1)
+
+Commit and push changes.
+
+git add -A
+git commit -m "replaced image uri with CONTAINER_IMAGE"
+git push
+
+![image](https://github.com/user-attachments/assets/fb1b3711-bba5-424c-9b7f-c3865c2a8009)
+
+### Test the CI/CD Pipeline
+
+Make a Change on GitHub:
+Update the application code in the `cloudmart` repository.
+Append file `src/components/MainPage/index.jsx` line 93 to say "Featured Products on Cloudmart" 
+![image](https://github.com/user-attachments/assets/ea5c6a6b-2c7c-445f-b799-c33c1812f905)
+![image](https://github.com/user-attachments/assets/c7573990-708a-4c31-b734-c6f33e26f6bd)
+
+Before:
+![image](https://github.com/user-attachments/assets/6932516a-1e2b-49cb-9f65-2e65d624de27)
+
+Commit and push the changes.
+    
+  git add -A
+  git commit -m "changed to Featured Products on CloudMart"
+  git push
+
+![image](https://github.com/user-attachments/assets/c66256f6-3a55-459c-a7f8-123f744e4ad6)
+
+After:
+![image](https://github.com/user-attachments/assets/978b2dfb-fa4e-4d17-bc94-1da504fd0fc7)
+
+We can see that the pipeline is working as the change was accepted.
