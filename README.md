@@ -299,3 +299,8 @@ Use the CLI to verify the services are running:
 This is what we have so far:
 
 ![image](https://github.com/user-attachments/assets/a2714e7f-2b52-43af-ac44-2297a308ceb2)
+
+Here we have a working API that we can add products to:
+
+![image](https://github.com/user-attachments/assets/6e0c72df-f7e3-422c-b627-8696f624b7ec)
+![image](https://github.com/user-attachments/assets/ce839899-bbb4-4d03-bb95-d87ef736accb)
