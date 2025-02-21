@@ -748,3 +748,79 @@ Paste the OpenAPI schema below into the schema editor:
     }
 }
 ```
+Click on `Prepare Agent` to finalize the creation.
+
+Test the Agent
+![image](https://github.com/user-attachments/assets/b56a9082-ba28-48c6-8e62-1b593cdf4edf)
+
+On the agent details page, go to the `Aliases` section.
+Click on `Create alias`.
+Name the alias `cloudmart-prod`.
+Select the most recent version of the agent.
+Click on `Create alias` to finalize.
+
+##Set up OpenAI Agent
+
+Access the OpenAI platform (https://platform.openai.com/).
+Log in.
+Navigate to the "Assistants" section.
+Click on "Create New Assistant".
+Name the assistant "CloudMart Customer Support".
+Select the model `gpt-4o`.
+In the "Instructions" section, paste the following:
+
+```Text
+You are a customer support agent for CloudMart, an e-commerce platform. Your role is to assist customers with general inquiries, order issues, and provide helpful information about using the CloudMart platform. You don't have direct access to specific product or inventory information. Always be polite, patient, and focus on providing excellent customer service. If a customer asks about specific products or inventory, politely explain that you don't have access to that information and suggest they check the website or speak with a sales representative.
+```
+
+Enable "Code Interpreter" so that the assistant is able to help with technical aspects of using the platform.
+Note down the Assistant ID: `asst_LmaOL5srxUrfGXS6WALgSmwO`
+
+Go to the API Keys section in your OpenAI account.
+Generate a new API key.
+Copy this key, you'll need it for your environment variables.
+
+Switching back to the EC2 instance we need to change directories.
+
+cd ../..
+cd challenge-day2/backend
+
+Now we will append the cloudmart-backend.yaml file to allow our AI access.
+We will be giving the placeholder values actual values from both our AI Agent and AI Assistant.
+
+nano cloudmart-backend.yaml
+
+
+        - name: BEDROCK_AGENT_ID
+          value: "xxxx"
+        - name: BEDROCK_AGENT_ALIAS_ID
+          value: "xxxx"
+        - name: OPENAI_API_KEY
+          value: "xxxx"
+        - name: OPENAI_ASSISTANT_ID
+          value: "xxxx"
+          
+![image](https://github.com/user-attachments/assets/5f8afd54-14f9-4cfa-9b9d-8d5f7d2c6c37)
+
+We find this info on the OpenAI assistant page as well as the Bedrock agent page.
+
+Now we need to push the appended .yaml into the environment
+
+![image](https://github.com/user-attachments/assets/9b7f0054-803c-4e81-94d5-c2178de5df35)
+
+### Test the AI
+
+Bedrock AI Agent:
+![image](https://github.com/user-attachments/assets/6830d70e-cab9-436f-8a40-a5e5c49973bf)
+
+Open AI Assistant:
+![image](https://github.com/user-attachments/assets/0899df3b-569c-44c9-9f3b-397abb3e65f1)
+
+Here we have two functioning AI bots that are capable of handling customer queries and even cancel orders:
+
+![image](https://github.com/user-attachments/assets/7db8b10a-891d-424a-a87d-299c57f69f83)
+![image](https://github.com/user-attachments/assets/829fa8b3-20bf-4b2f-b0ed-90e5b83b5297)
+![image](https://github.com/user-attachments/assets/008347bc-2576-4dc9-9bd9-a7f5d704c762)
+![image](https://github.com/user-attachments/assets/74958021-b027-4808-af82-aa7a418235d9)
+
+
