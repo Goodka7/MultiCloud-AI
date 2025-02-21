@@ -1,8 +1,12 @@
+AWS Virtual Machine Set Up
+
 Provision a VM with EC2
 ![image](https://github.com/user-attachments/assets/f6f8e75c-e9a4-46cd-b480-c0cac552cb6c)
 
 Launch EC2 Instance
 ![image](https://github.com/user-attachments/assets/1c208424-1f25-4ebf-ae0b-770db497a741)
+
+Terraform Set Up
 
 Install Terraform.
 ![image](https://github.com/user-attachments/assets/1907d4ad-3a76-4100-88b4-5b7cd224255d)
@@ -29,7 +33,7 @@ resource "aws_s3_bucket" "my_bucket" {
 Initialize Terraform.
 ![image](https://github.com/user-attachments/assets/aabee7cc-d647-4064-a3ad-3e7d78b10ec0)
 
-Use terraform plan to show what our config file will be doing.
+Use Terraform plan to show what our config file will be doing.
 ![image](https://github.com/user-attachments/assets/9e9dca6f-6162-4923-9a35-9ce30f66dddd)
 
 Apply via Terraform to automate the S3 bucket creation.
@@ -43,6 +47,8 @@ Edit the main.tf file to create tables.
 
 Apply Terraform to automate the table creation and remove the S3 bucket.
 ![image](https://github.com/user-attachments/assets/1fa6b58c-7a64-412a-a469-f6f5da42939d)
+
+Docker set up.
 
 Install Docker.
 ![image](https://github.com/user-attachments/assets/5af95d6c-33c4-463a-880c-db0b969e4adf)
@@ -94,5 +100,36 @@ CMD ["serve", "-s", ".", "-l", "5001"]
 
 ![image](https://github.com/user-attachments/assets/d5ae877d-0ca1-4552-a3dc-b1ad39589e49)
 
+Admin Set Up for Kubernetes
+
+Create a user named eksuser with Administrative privileges.
+![image](https://github.com/user-attachments/assets/54000981-936e-4fe5-89fe-7d697aab1a87)
+
+Autheniticate the Admin(user).
+
+Create access key in IAM:
+Click Users> Click "eksuser" > Click "Create Access Key"
+Select CLI > Check the confirmation box > Click Next
+Click Create access key
+
+Copy the Access from the Screen by clicking the copy button.
+![image](https://github.com/user-attachments/assets/56bf8f56-1d58-4b33-8bbd-cee23c75d019)
+
+Run command aws configure. It will ask you for the access key, paste it there and hit enter.
+![image](https://github.com/user-attachments/assets/51b2c0e3-9d9f-4253-a49d-186d76a2d69c)
+
+You will then need to repeat this step with the Secret access key.
+![image](https://github.com/user-attachments/assets/3c83efe5-34bb-4020-8688-48dc4673ebbc)
+
+Enter the region you are working with in the next step, for me it's us-west-2
+Keep the default output format by clicking enter.
+
+Kubernetes Set Up
+
+Install eksctl through the CLI
+![image](https://github.com/user-attachments/assets/4fc9a275-10ed-4766-a72e-c2a2d4f9b669)
+
+Install kubectl through the CLI
+![image](https://github.com/user-attachments/assets/faf75f8b-a289-4970-8b8d-657a2744faa0)
 
 
