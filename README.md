@@ -1,5 +1,5 @@
 ##AWS Virtual Machine Set Up
-
+STAGE 1
 Provision a VM with EC2
 ![image](https://github.com/user-attachments/assets/f6f8e75c-e9a4-46cd-b480-c0cac552cb6c)
 
@@ -497,3 +497,254 @@ After:
 ![image](https://github.com/user-attachments/assets/978b2dfb-fa4e-4d17-bc94-1da504fd0fc7)
 
 We can see that the pipeline is working as the change was accepted.
+
+
+PART 3
+
+First lets copy the products.zip into the Terraform folder
+
+cd challenge-day2/backend/src/lambda
+cp list_products.zip ../../../../terraform-project/
+cd ../../../../terraform-project
+
+Next we will append the main.tf:
+
+# IAM Role for Lambda function
+resource "aws_iam_role" "lambda_role" {
+  name = "cloudmart_lambda_role"
+
+  assume_role_policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Action = "sts:AssumeRole"
+        Effect = "Allow"
+        Principal = {
+          Service = "lambda.amazonaws.com"
+        }
+      }
+    ]
+  })
+}
+
+# IAM Policy for Lambda function
+resource "aws_iam_role_policy" "lambda_policy" {
+  name = "cloudmart_lambda_policy"
+  role = aws_iam_role.lambda_role.id
+
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Effect = "Allow"
+        Action = [
+          "dynamodb:Scan",
+          "logs:CreateLogGroup",
+          "logs:CreateLogStream",
+          "logs:PutLogEvents"
+        ]
+        Resource = [
+          aws_dynamodb_table.cloudmart_products.arn,
+          aws_dynamodb_table.cloudmart_orders.arn,
+          aws_dynamodb_table.cloudmart_tickets.arn,
+          "arn:aws:logs:*:*:*"
+        ]
+      }
+    ]
+  })
+}
+
+# Lambda function for listing products
+resource "aws_lambda_function" "list_products" {
+  filename         = "list_products.zip"
+  function_name    = "cloudmart-list-products"
+  role             = aws_iam_role.lambda_role.arn
+  handler          = "index.handler"
+  runtime          = "nodejs20.x"
+  source_code_hash = filebase64sha256("list_products.zip")
+
+  environment {
+    variables = {
+      PRODUCTS_TABLE = aws_dynamodb_table.cloudmart_products.name
+    }
+  }
+}
+
+# Lambda permission for Bedrock
+resource "aws_lambda_permission" "allow_bedrock" {
+  statement_id  = "AllowBedrockInvoke"
+  action        = "lambda:InvokeFunction"
+  function_name = aws_lambda_function.list_products.function_name
+  principal     = "bedrock.amazonaws.com"
+}
+
+# Output the ARN of the Lambda function
+output "list_products_function_arn" {
+  value = aws_lambda_function.list_products.arn
+}
+
+This script creates an IAM role and policy for a Lambda function, the Lambda function itself (which lists products from DynamoDB), permissions for Bedrock to invoke the function, and outputs the ARN of the Lambda function.
+
+terraform apply in order to push changes.
+![image](https://github.com/user-attachments/assets/743c2081-d185-47fb-affc-68557a25fff9)
+
+Set up Amazon Bedrock
+\\---> We will be using the Claude 3 Sonnet verison even though its considered a legacy, this is because the set up is very easy.
+You must request the agent, you can do so by searching the list for the agent you wish to use.
+![image](https://github.com/user-attachments/assets/7a7ef9fa-b296-45dc-9bbf-6baefaa04bf0)
+
+Select "Agent" under "Builder Tools" on the left side of the screen.
+Click "Create Agent".
+![image](https://github.com/user-attachments/assets/f0205cd9-192c-46d4-af26-dde9a1fffe38)
+
+Insert the following for Agent Instructions:
+
+You are a product recommendations agent for CloudMart, an online e-commerce store. Your role is to assist customers in finding products that best suit their needs. Follow these instructions carefully:
+
+1. Begin each interaction by retrieving the full list of products from the API. This will inform you of the available products and their details.
+
+2. Your goal is to help users find suitable products based on their requirements. Ask questions to understand their needs and preferences if they're not clear from the user's initial input.
+
+3. Use the 'name' parameter to filter products when appropriate. Do not use or mention any other filter parameters that are not part of the API.
+
+4. Always base your product suggestions solely on the information returned by the API. Never recommend or mention products that are not in the API response.
+
+5. When suggesting products, provide the name, description, and price as returned by the API. Do not invent or modify any product details.
+
+6. If the user's request doesn't match any available products, politely inform them that we don't currently have such products and offer alternatives from the available list.
+
+7. Be conversational and friendly, but focus on helping the user find suitable products efficiently.
+
+8. Do not mention the API, database, or any technical aspects of how you retrieve the information. Present yourself as a knowledgeable sales assistant.
+
+9. If you're unsure about a product's availability or details, always check with the API rather than making assumptions.
+
+10. If the user asks about product features or comparisons, use only the information provided in the product descriptions from the API.
+
+11. Be prepared to assist with a wide range of product inquiries, as our e-commerce store may carry various types of items.
+
+12. If a user is looking for a specific type of product, use the 'name' parameter to search for relevant items, but be aware that this may not capture all categories or types of products.
+
+Remember, your primary goal is to help users find the best products for their needs from what's available in our store. Be helpful, informative, and always base your recommendations on the actual product data provided by the API.
+
+Scroll up and click "Save and Exit"
+Scroll down on the cloudmart-product-recommendation-agent overview
+
+![image](https://github.com/user-attachments/assets/94947079-53f3-4428-b560-67a2ff5559fc)
+
+Click the link to open in a NEW TAB.
+We are going to add a permission so the Agent can use the Lambda function.
+Click "Add permissions".
+Select "Create inline policy".
+Select "json" at the top and add the following script:
+
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "lambda:InvokeFunction",
+      "Resource": "arn:aws:lambda:*:*:function:cloudmart-list-products"
+    },
+    {
+      "Effect": "Allow",
+      "Action": "bedrock:InvokeModel",
+      "Resource": "arn:aws:bedrock:*::foundation-model/anthropic.claude-3-sonnet-20240229-v1:0"
+    }
+  ]
+}
+
+Click "Next".
+Name the policy `BedrockAgentLambdaAccess`.
+Click "Create policy".
+![image](https://github.com/user-attachments/assets/6f07ef5d-dfe4-4e56-b67a-2c5971a310a1)
+
+Time to add an Action Group.
+Going back to the Amazon Bedrock screen, click `Edit in Agent Builder`.
+Scroll down to the Action Group section and click `Add`.
+Set the Action Group name to `Get-Product-Recommendations`.
+Set the action group type as `Define with API schemas`.
+Select the Lambda function `cloudmart-list-products` as the action group executor.
+In the `Action group schema` section, choose `Define via in-line schema editor`.
+Paste the OpenAPI schema below into the schema editor:
+
+```
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Product Details API",
+        "version": "1.0.0",
+        "description": "This API retrieves product information. Filtering parameters are passed as query strings. If query strings are empty, it performs a full scan and retrieves the full product list."
+    },
+    "paths": {
+        "/products": {
+            "get": {
+                "summary": "Retrieve product details",
+                "description": "Retrieves a list of products based on the provided query string parameters. If no parameters are provided, it returns the full list of products.",
+                "parameters": [
+                    {
+                        "name": "name",
+                        "in": "query",
+                        "description": "Retrieve details for a specific product by name",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "name": {
+                                                "type": "string"
+                                            },
+                                            "description": {
+                                                "type": "string"
+                                            },
+                                            "price": {
+                                                "type": "number"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Internal Server Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "ErrorResponse": {
+                "type": "object",
+                "properties": {
+                    "error": {
+                        "type": "string",
+                        "description": "Error message"
+                    }
+                },
+                "required": [
+                    "error"
+                ]
+            }
+        }
+    }
+}
+```
