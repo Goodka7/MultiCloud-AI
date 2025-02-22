@@ -91,9 +91,11 @@ BEDROCK_AGENT_ID=<your-bedrock-agent-id>
 BEDROCK_AGENT_ALIAS_ID=<your-bedrock-agent-alias-id>
 OPENAI_API_KEY=<your-openai-api-key>
 OPENAI_ASSISTANT_ID=<your-openai-assistant-id>
+```
 
-Make a Dockerfile to set up a containerized environment for a Node.js application, installs dependencies, and specifies how to run the application:
+### Make a `Dockerfile` to set up a containerized environment for a `Node.js` application, installs dependencies, and specifies how to run the application:
 
+```Nano
 FROM node:18
 WORKDIR /usr/src/app
 COPY package*.json ./
