@@ -987,5 +987,4 @@ git add -A
 git commit -m "final code"
 git push 
 ```
-<img src="https://github.com/user-attachments/assets/11cc3198-9a22-42b8-9e95-e76df134b216" width="500">
-<img src="https://github.com/user-attachments/assets/70e97697-4728-470a-a164-7474d19c126a">
+<img src="https://github.com/user-attachments/assets/11cc3198-9a22-42b8-9e95-e76df134b216" width="800">
