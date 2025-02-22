@@ -119,15 +119,15 @@ EXPOSE 5000
 CMD ["npm", "start"]
 ```
 
-### Next I made a new directory for the front-end and download the front-end resources.
+### Next I made a new directory for the front-end and download the front-end resources
 
 <img src="https://github.com/user-attachments/assets/7174eb15-83e6-4ee3-ac9a-7ddbc010c42a" width="800" />
 
-### Then I unziped the front-end resources.
+### Then I unziped the front-end resources
 
 <img src="https://github.com/user-attachments/assets/bb62e470-e3be-459a-9e8e-33a7b1aa5cc9" width="800" />
 
-### Next I create another `Dockerfile` to add front-end settings for the Node.js Docker application.
+### Next I create another `Dockerfile` to add front-end settings for the Node.js Docker application
 
 ```bash
 FROM node:16-alpine
@@ -210,7 +210,7 @@ eksctl create cluster \
 ### I connected to the EKS cluster using kubectl configuration and then verified cluster connectivity
 <img src="https://github.com/user-attachments/assets/8dbbfdcd-4059-438a-9c6f-6a4add7bf152" width="800" />
 
-### I created a role and a service account to provide pods access to services used by the application (`DynamoDB`, `Bedrock`, etc):
+### I created a role and a service account to provide pods access to services used by the application (`DynamoDB`, `Bedrock`, etc)
 <img src="https://github.com/user-attachments/assets/53cbffa4-b08f-42d6-9a0e-db1d57cfac07" width="800" />
 
 ---
@@ -220,8 +220,7 @@ eksctl create cluster \
 ---
 ## ECR Set Up
 
-### I created an ECR Repository for the backened to "dock" the Docker Image.
-
+### I created an ECR Repository for the backened to "dock" the Docker Image
 <img src="https://github.com/user-attachments/assets/45004723-f568-4b18-a8fd-21eafe11d34a" width="800" />
 
 ```
@@ -314,10 +313,9 @@ kubectl apply -f cloudmart-backend.yaml
 <img src="https://github.com/user-attachments/assets/78e9f2d4-2621-43cf-8601-f66560b7afa5" width="800" />
 
 ### I monitored the status of objects being created and obtained the public IP generated for the API
-
 <img src="https://github.com/user-attachments/assets/88c5ff87-814b-43b0-8dcc-0d1c61f90d08" width="800" />
 
-### I changed to the frontend directory to work on the front end
+### I changed to the frontend directory to work on the front end:
 
 ```
 cd ..
@@ -325,7 +323,6 @@ cd frontend
 ```
 
 ### I then used the CLI to get the URL for the Kubernetes API
-
 <img src="https://github.com/user-attachments/assets/6dd00d33-5a80-4470-91c5-afd396f6af1e" width="800" />
 
 ### Next I copied the URL to appened the following:
@@ -338,8 +335,7 @@ nano .env
 VITE_API_BASE_URL=http://<your_url_kubernetes_api>:5000/api
 ```
 
-### After that I created an ECR Repository for the frontend.
-
+### After that I created an ECR Repository for the frontend
 <img src="https://github.com/user-attachments/assets/a3fa488d-6120-4c88-8317-b385d6c107c6" width="800" />
 
 ```
@@ -347,11 +343,10 @@ I named the repository and left all other options as default > Clicked create.
 ```
 
 ### I followed the steps for ECR onboarding like I did for the backend
-
 <img src="https://github.com/user-attachments/assets/40ff1f55-ea25-40f6-9171-89f1b316c375" width="800" />
 
 
-### I created a Kubernetes deployment file for the Frontend
+### I created a Kubernetes deployment file for the Frontend:
 
 ```
 nano cloudmart-frontend.yaml
@@ -401,19 +396,17 @@ spec:
 ### I applied the deployment file through the CLI tool
 <img src="https://github.com/user-attachments/assets/16b69edf-6197-4484-beda-6e491773fa6c" width="800" />
 
-### I used the CLI to verify the services are running:
+### I used the CLI to verify the services are running
 <img src="https://github.com/user-attachments/assets/d162aac9-c885-4304-84ca-b7ecc14eea29" width="800" />
 
 ---
 
 ## Wrap Up
 
-### I decided to check the Web facing API to see what I have so far:
-
+### I decided to check the Web facing API to see what I have so far
 <img src="https://github.com/user-attachments/assets/a2714e7f-2b52-43af-ac44-2297a308ceb2" width="800" />
 
-### Here I have a working API that I can add products to:
-
+### Here I have a working API that I can add products to
 <img src="https://github.com/user-attachments/assets/6e0c72df-f7e3-422c-b627-8696f624b7ec" width="800" />
 <img src="https://github.com/user-attachments/assets/ce839899-bbb4-4d03-bb95-d87ef736accb" width="800" />
 
