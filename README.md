@@ -157,21 +157,21 @@ Created access key in IAM:
 Clicked Users> Clicked "eksuser" > Clicked "Create Access Key"
 Selected CLI > Checked the confirmation box > Clicked Next
 Clicked Create access key
-```
 
-### I copied the `access key` from the dashcreen by clicking the copy button.
+
+I copied the `access key` from the dashcreen by clicking the copy button.
 
 <img src="https://github.com/user-attachments/assets/56bf8f56-1d58-4b33-8bbd-cee23c75d019" width="300" />
 
 
-### Ran command `aws configure` in CLI to enter access key
+I ran the command `aws configure` in CLI to enter access key
 
 <img src="https://github.com/user-attachments/assets/51b2c0e3-9d9f-4253-a49d-186d76a2d69c" width="500" />
 
-### I then copied the secret access key and pasted it into the CLI
+I then copied the secret access key and pasted it into the CLI
+
 <img src="https://github.com/user-attachments/assets/3c83efe5-34bb-4020-8688-48dc4673ebbc" width="500" />
 
-```
 Entered the region: us-west-2
 Kept the default output format by clicking enter.
 ```
