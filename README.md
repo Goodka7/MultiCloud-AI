@@ -4,13 +4,15 @@
 
 ## AWS Virtual Machine Set Up
 
-Provision a VM with EC2
+### Provision a VM using EC2
+
 ![image](https://github.com/user-attachments/assets/f6f8e75c-e9a4-46cd-b480-c0cac552cb6c)
 
-Launch EC2 Instance
+### Launch the EC2 Instance
+
 ![image](https://github.com/user-attachments/assets/1c208424-1f25-4ebf-ae0b-770db497a741)
 
-##Terraform Set Up
+## Terraform Set Up
 
 Install Terraform.
 ![image](https://github.com/user-attachments/assets/1907d4ad-3a76-4100-88b4-5b7cd224255d)
