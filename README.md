@@ -57,13 +57,15 @@ resource "aws_s3_bucket" "my_bucket" {
 
 <img src="https://github.com/user-attachments/assets/7ba5e91f-c59a-4bfb-afe5-1cfc37e73bdd" width="800" />
 
-Edit the main.tf file to create tables.
-![image](https://github.com/user-attachments/assets/f4697f46-cbcf-4b3b-86d3-5fce97c07e4a)
+### Edit the Use `main.tf` file to create tables
 
-Apply Terraform to automate the table creation and remove the S3 bucket.
-![image](https://github.com/user-attachments/assets/1fa6b58c-7a64-412a-a469-f6f5da42939d)
+<img src="https://github.com/user-attachments/assets/f4697f46-cbcf-4b3b-86d3-5fce97c07e4a" width="800" />
 
-##Docker set up.
+### `terraform apply` to automate the table creation and remove the S3 bucket
+
+<img src="https://github.com/user-attachments/assets/1fa6b58c-7a64-412a-a469-f6f5da42939d" width="800" />
+
+## Docker set up
 
 Install Docker.
 ![image](https://github.com/user-attachments/assets/5af95d6c-33c4-463a-880c-db0b969e4adf)
