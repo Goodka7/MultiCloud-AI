@@ -14,12 +14,13 @@
 
 ## Terraform Set Up
 
-### Install Terraform.
+### Install Terraform
 
 <img src="https://github.com/user-attachments/assets/1907d4ad-3a76-4100-88b4-5b7cd224255d" width="800" />
 
-Use nano to create a config for S3Bucket:
+### Use nano to create a config for S3Bucket:
 
+```Bash
 provider "aws" {
   region = "us-west-2"  # Replace with your desired region
 }
@@ -36,6 +37,7 @@ resource "aws_s3_bucket" "my_bucket" {
     Environment = "Dev"
   }
 }
+```
 
 Initialize Terraform.
 ![image](https://github.com/user-attachments/assets/aabee7cc-d647-4064-a3ad-3e7d78b10ec0)
