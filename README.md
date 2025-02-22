@@ -1,5 +1,4 @@
-![Multi-Cloud, Artificial Intelligence](https://github.com/user-attachments/assets/c584d492-45a7-4964-b7ea-c9d7e13eba49)
-
+<img src="https://github.com/user-attachments/assets/c584d492-45a7-4964-b7ea-c9d7e13eba49" width="500" />
 
 STAGE 1
 
