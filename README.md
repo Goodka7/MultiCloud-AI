@@ -148,17 +148,21 @@ CMD ["serve", "-s", ".", "-l", "5001"]
 
 ### I created a user named `eksuser` in IAM with administrative privileges
 
-<img src="https://github.com/user-attachments/assets/54000981-936e-4fe5-89fe-7d697aab1a87" width="500" />
+<img src="https://github.com/user-attachments/assets/54000981-936e-4fe5-89fe-7d697aab1a87" width="800" />
 
 ### Next I autheniticated the `eksuser` admin:
 
-> Create access key in IAM:
+```
+Create access key in IAM:
 Click Users> Click "eksuser" > Click "Create Access Key"
 Select CLI > Check the confirmation box > Click Next
 Click Create access key
+```
 
-Copy the Access from the Screen by clicking the copy button.
-![image](https://github.com/user-attachments/assets/56bf8f56-1d58-4b33-8bbd-cee23c75d019)
+### I copied the `access key` from the dashcreen by clicking the copy button.
+
+<img src="https://github.com/user-attachments/assets/56bf8f56-1d58-4b33-8bbd-cee23c75d019" width="500" />
+
 
 Run command aws configure. It will ask you for the access key, paste it there and hit enter.
 ![image](https://github.com/user-attachments/assets/51b2c0e3-9d9f-4253-a49d-186d76a2d69c)
