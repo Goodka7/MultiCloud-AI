@@ -166,10 +166,10 @@ Click Create access key
 
 ### Ran command `aws configure` to enter access key
 
-<img src="https://github.com/user-attachments/assets/51b2c0e3-9d9f-4253-a49d-186d76a2d69c" width="300" />
+<img src="https://github.com/user-attachments/assets/51b2c0e3-9d9f-4253-a49d-186d76a2d69c" width="500" />
 
-You will then need to repeat this step with the Secret access key.
-<img src="https://github.com/user-attachments/assets/3c83efe5-34bb-4020-8688-48dc4673ebbc" width="300" />
+### You will then need to repeat this step with the Secret access key.
+<img src="https://github.com/user-attachments/assets/3c83efe5-34bb-4020-8688-48dc4673ebbc" width="500" />
 
 Enter the region you are working with in the next step, for me it's us-west-2
 Keep the default output format by clicking enter.
