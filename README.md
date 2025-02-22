@@ -138,9 +138,11 @@ EXPOSE 5001
 CMD ["serve", "-s", ".", "-l", "5001"]
 ```
 
-<img src="https://github.com/user-attachments/assets/d5ae877d-0ca1-4552-a3dc-b1ad39589e49" width="800" />
+<img src="https://github.com/user-attachments/assets/d5ae877d-0ca1-4552-a3dc-b1ad39589e49" width="500" />
 
-###Admin Set Up for Kubernetes
+---
+
+### Kubernetes Set Up
 
 Create a user named eksuser in IAM with Administrative privileges.
 ![image](https://github.com/user-attachments/assets/54000981-936e-4fe5-89fe-7d697aab1a87)
