@@ -22,9 +22,9 @@
 
 <img src="https://github.com/user-attachments/assets/1907d4ad-3a76-4100-88b4-5b7cd224255d" width="800" />
 
-### I then used nano to create a config for a S3 bucket:
+### I then used nano to create a config for a S3 bucket called `main.tf`:
 
-```Bash
+```nano
 provider "aws" {
   region = "us-west-2"  # Replace with your desired region
 }
@@ -44,6 +44,8 @@ resource "aws_s3_bucket" "my_bucket" {
 ```
 
 ### Initialize Terraform
+
+### Using `terraform init` I initialized Terraform.
 
 <img src="https://github.com/user-attachments/assets/aabee7cc-d647-4064-a3ad-3e7d78b10ec0" width="800" />
 
