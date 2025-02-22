@@ -125,7 +125,7 @@ CMD ["npm", "start"]
 
 <img src="https://github.com/user-attachments/assets/bb62e470-e3be-459a-9e8e-33a7b1aa5cc9" width="800" />
 
-### Next I added front-end settings for the Node.js Docker application.
+### Next I appended `Dockerfile` to add front-end settings for the Node.js Docker application.
 
 ```bash
 FROM node:16-alpine
