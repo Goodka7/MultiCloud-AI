@@ -74,7 +74,7 @@ resource "aws_s3_bucket" "my_bucket" {
 <img src="https://github.com/user-attachments/assets/5af95d6c-33c4-463a-880c-db0b969e4adf" width="800" />
 <img src="https://github.com/user-attachments/assets/5786f4d6-03d9-4e12-8ddb-75ffe13658cb" width="800" />
 
-### Make a new directory for back-end
+### Make a new directory for the back-end
 
 <img src="https://github.com/user-attachments/assets/be98734f-901f-482e-9e06-eaeb477425ac" width="800" />
 
@@ -82,8 +82,9 @@ resource "aws_s3_bucket" "my_bucket" {
 
 <img src="https://github.com/user-attachments/assets/e8c4f892-c21f-4fd0-9b6a-70dca5420f98" width="800" />
 
-Make environment config .env to communicate with different services(Bedrock, AWS and OpenAI):
+### Make environment config `.env` to communicate with different services(`Bedrock`, `AWS` and `OpenAI`):
 
+```Nano
 PORT=5000
 AWS_REGION=us-west-2
 BEDROCK_AGENT_ID=<your-bedrock-agent-id>
@@ -100,6 +101,7 @@ RUN npm install
 COPY . .
 EXPOSE 5000
 CMD ["npm", "start"]
+```
 
 ![image](https://github.com/user-attachments/assets/d47c7ce0-2224-437a-9ba8-b4535c0fbaaf)
 
