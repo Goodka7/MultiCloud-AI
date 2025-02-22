@@ -6,7 +6,7 @@
 
 ### Provision a VM using EC2
 
-![image](https://github.com/user-attachments/assets/f6f8e75c-e9a4-46cd-b480-c0cac552cb6c)
+<img src="https://github.com/user-attachments/assets/f6f8e75c-e9a4-46cd-b480-c0cac552cb6c" width="800" />
 
 ### Launch the EC2 Instance
 
