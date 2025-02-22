@@ -84,11 +84,11 @@ resource "aws_s3_bucket" "my_bucket" {
 <img src="https://github.com/user-attachments/assets/5af95d6c-33c4-463a-880c-db0b969e4adf" width="800" />
 <img src="https://github.com/user-attachments/assets/5786f4d6-03d9-4e12-8ddb-75ffe13658cb" width="800" />
 
-### I create a new directory for the back-end using the CLI
+### I created a new directory for the back-end using the CLI
 
 <img src="https://github.com/user-attachments/assets/be98734f-901f-482e-9e06-eaeb477425ac" width="800" />
 
-### I unzip the back-end resources using the CLI
+### I unziped the back-end resources using the CLI
 
 <img src="https://github.com/user-attachments/assets/e8c4f892-c21f-4fd0-9b6a-70dca5420f98" width="800" />
 
