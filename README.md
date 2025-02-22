@@ -225,7 +225,7 @@ eksctl create cluster \
 <img src="https://github.com/user-attachments/assets/45004723-f568-4b18-a8fd-21eafe11d34a" width="800" />
 
 ```
- Name the repository and leave all other options as default > Click create.
+ I named the repository and left all other options as default > Clicked create.
 ```
 
 ---
@@ -242,9 +242,10 @@ cd backend
 ```
 
 ### I followed the steps for ECR onboarding:
-<img src="https://github.com/user-attachments/assets/80cdb5f4-812c-49ee-902d-299043ee4aa2" width="500" />
-<img src="https://github.com/user-attachments/assets/9e7c6485-77d1-4cd6-a51b-6754e5d8c465" width="500" />
-<img src="https://github.com/user-attachments/assets/fb9d651d-82b9-4c2b-bb43-9222c2410595" width="500" />
+
+<img src="https://github.com/user-attachments/assets/80cdb5f4-812c-49ee-902d-299043ee4aa2" width="800" />
+<img src="https://github.com/user-attachments/assets/9e7c6485-77d1-4cd6-a51b-6754e5d8c465" width="800" />
+<img src="https://github.com/user-attachments/assets/fb9d651d-82b9-4c2b-bb43-9222c2410595" width="800" />
 
 ### I created a Kubernetes deployment file (YAML) for the Backend.
 
