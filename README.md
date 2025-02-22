@@ -299,9 +299,11 @@ spec:
       targetPort: 5000
 ```
       
-```
-I changed the "image:" line to the ":latest" URI Image from the ECR instance I created.
-```
+---
+
+>**NOTE:** I changed the "image:" line to the ":latest" URI Image from the ECR instance I created.
+
+---
 
 ### I appled the `.yaml` configure file using the CLI tool
 
@@ -344,12 +346,18 @@ VITE_API_BASE_URL=http://<your_url_kubernetes_api>:5000/api
 I named the repository and left all other options as default > Clicked create.
 ```
 
-Follow the steps for ECR onboarding like we did for the backend.
-![image](https://github.com/user-attachments/assets/40ff1f55-ea25-40f6-9171-89f1b316c375)
+### I followed the steps for ECR onboarding like I did for the backend
 
-Create a Kubernetes deployment file (YAML) for the Frontend.
+<img src="https://github.com/user-attachments/assets/40ff1f55-ea25-40f6-9171-89f1b316c375" width="800" />
+
+
+### I created a Kubernetes deployment file for the Frontend
+
+```
 nano cloudmart-frontend.yaml
+```
 
+```
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -382,8 +390,13 @@ spec:
     - protocol: TCP
       port: 5001
       targetPort: 5001
+```
 
-//--> Make sure you edit the "image:" field with the correct image like we did on the backend.
+---
+
+>**NOTE:** I changed the "image:" line to the ":latest" URI Image from the ECR instance I created.
+
+---
 
 Apply the deployment file through the CLI tool:
 ![image](https://github.com/user-attachments/assets/16b69edf-6197-4484-beda-6e491773fa6c)
