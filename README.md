@@ -43,7 +43,7 @@ resource "aws_s3_bucket" "my_bucket" {
 }
 ```
 
-### I used `terraform init` I initialized Terraform.
+### I used `terraform init` to initialized Terraform.
 
 <img src="https://github.com/user-attachments/assets/aabee7cc-d647-4064-a3ad-3e7d78b10ec0" width="800" />
 
