@@ -22,7 +22,7 @@
 
 <img src="https://github.com/user-attachments/assets/1907d4ad-3a76-4100-88b4-5b7cd224255d" width="800" />
 
-### Use nano to create a config for a S3Bucket:
+### Use nano to create a config for a S3 bucket:
 
 ```Bash
 provider "aws" {
