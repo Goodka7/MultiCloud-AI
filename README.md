@@ -64,6 +64,7 @@ resource "aws_s3_bucket" "my_bucket" {
 ### `terraform apply` to automate the table creation and remove the S3 bucket
 
 <img src="https://github.com/user-attachments/assets/1fa6b58c-7a64-412a-a469-f6f5da42939d" width="800" />
+---
 
 ## Docker set up
 
