@@ -47,7 +47,7 @@ resource "aws_s3_bucket" "my_bucket" {
 
 <img src="https://github.com/user-attachments/assets/aabee7cc-d647-4064-a3ad-3e7d78b10ec0" width="800" />
 
-### I then used `terraform plan` to review and make sure the services are configured correctly
+### I then used `terraform plan` to review and make sure the bucket is configured correctly
 
 <img src="https://github.com/user-attachments/assets/9e9dca6f-6162-4923-9a35-9ce30f66dddd" width="800" />
 
