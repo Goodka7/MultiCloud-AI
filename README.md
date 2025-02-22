@@ -59,7 +59,7 @@ resource "aws_s3_bucket" "my_bucket" {
 
 <img src="https://github.com/user-attachments/assets/7ba5e91f-c59a-4bfb-afe5-1cfc37e73bdd" width="800" />
 
-### Edit the Use `main.tf` file to create DynamoDB tables
+### Edit the `main.tf` file to create DynamoDB tables
 
 <img src="https://github.com/user-attachments/assets/f4697f46-cbcf-4b3b-86d3-5fce97c07e4a" width="800" />
 
