@@ -219,9 +219,13 @@ eksctl create cluster \
 
 ---
 
-###Create an ECR Repository for the backened to house the Docker Image.
+### Created an ECR Repository for the backened to "dock" the Docker Image.
 
-Name the repository and leave all other options as default > Click create.
+<img src="https://github.com/user-attachments/assets/84cb8f36-294e-4209-be76-10d79142fd21" width="500" />
+
+```
+ Name the repository and leave all other options as default > Click create.
+```
 
 <img src="https://github.com/user-attachments/assets/45004723-f568-4b18-a8fd-21eafe11d34a" width="800" />
 
