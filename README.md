@@ -10,12 +10,13 @@
 
 ### Launch the EC2 Instance
 
-![image](https://github.com/user-attachments/assets/1c208424-1f25-4ebf-ae0b-770db497a741)
+<img src="https://github.com/user-attachments/assets/1c208424-1f25-4ebf-ae0b-770db497a741" width="800" />
 
 ## Terraform Set Up
 
-Install Terraform.
-![image](https://github.com/user-attachments/assets/1907d4ad-3a76-4100-88b4-5b7cd224255d)
+### Install Terraform.
+
+<img src="https://github.com/user-attachments/assets/1907d4ad-3a76-4100-88b4-5b7cd224255d" width="800" />
 
 Use nano to create a config for S3Bucket:
 
