@@ -94,7 +94,7 @@ resource "aws_s3_bucket" "my_bucket" {
 
 <img src="https://github.com/user-attachments/assets/e8c4f892-c21f-4fd0-9b6a-70dca5420f98" width="800" />
 
-### I made environment config `.env` to communicate with different services(`Bedrock`, `AWS` and `OpenAI`):
+### I made an environment config `.env` to communicate with different services(`Bedrock`, `AWS` and `OpenAI`):
 
 ```bash
 PORT=5000
