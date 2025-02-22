@@ -24,7 +24,7 @@
 
 ### I then used nano to create a config for a S3 bucket called `main.tf`:
 
-```nano
+```
 provider "aws" {
   region = "us-west-2"  # Replace with your desired region
 }
@@ -79,22 +79,22 @@ resource "aws_s3_bucket" "my_bucket" {
 
 ## Docker Set Up
 
-### Install Docker
+### I used the CLI to install Docker
 
 <img src="https://github.com/user-attachments/assets/5af95d6c-33c4-463a-880c-db0b969e4adf" width="800" />
 <img src="https://github.com/user-attachments/assets/5786f4d6-03d9-4e12-8ddb-75ffe13658cb" width="800" />
 
-### Make a new directory for the back-end
+### I create a new directory for the back-end using the CLI
 
 <img src="https://github.com/user-attachments/assets/be98734f-901f-482e-9e06-eaeb477425ac" width="800" />
 
-### Unzip the back-end resources
+### I unzip the back-end resources using the CLI
 
 <img src="https://github.com/user-attachments/assets/e8c4f892-c21f-4fd0-9b6a-70dca5420f98" width="800" />
 
-### Make environment config `.env` to communicate with different services(`Bedrock`, `AWS` and `OpenAI`):
+### I made environment config `.env` to communicate with different services(`Bedrock`, `AWS` and `OpenAI`):
 
-```Nano
+```bash
 PORT=5000
 AWS_REGION=us-west-2
 BEDROCK_AGENT_ID=<your-bedrock-agent-id>
@@ -105,9 +105,9 @@ OPENAI_ASSISTANT_ID=<your-openai-assistant-id>
 
 <img src="https://github.com/user-attachments/assets/d47c7ce0-2224-437a-9ba8-b4535c0fbaaf" width="800" />
 
-### Make a `Dockerfile` to set up a containerized environment for a `Node.js` application, installs dependencies, and specifies how to run the application:
+### I then made a `Dockerfile` to set up a containerized environment for a `Node.js` based Docker application, installs dependencies, and specifies how to run the application:
 
-```Nano
+```bash
 FROM node:18
 WORKDIR /usr/src/app
 COPY package*.json ./
@@ -117,14 +117,17 @@ EXPOSE 5000
 CMD ["npm", "start"]
 ```
 
-Make a new directory for front-end and download front-end resources.
-![image](https://github.com/user-attachments/assets/7174eb15-83e6-4ee3-ac9a-7ddbc010c42a)
+### Next I made a new directory for the front-end and download the front-end resources.
 
-Unzip the front-end resources.
-![image](https://github.com/user-attachments/assets/bb62e470-e3be-459a-9e8e-33a7b1aa5cc9)
+<img src="https://github.com/user-attachments/assets/7174eb15-83e6-4ee3-ac9a-7ddbc010c42a" width="800" />
 
-Add front-end settings for the Node.js application.
+### Then I unziped the front-end resources.
 
+<img src="https://github.com/user-attachments/assets/bb62e470-e3be-459a-9e8e-33a7b1aa5cc9" width="800" />
+
+### Next I added front-end settings for the Node.js Docker application.
+
+```bash
 FROM node:16-alpine
 WORKDIR /app
 RUN npm install -g serve
@@ -133,8 +136,9 @@ ENV PORT=5001
 ENV NODE_ENV=production
 EXPOSE 5001
 CMD ["serve", "-s", ".", "-l", "5001"]
+```
 
-![image](https://github.com/user-attachments/assets/d5ae877d-0ca1-4552-a3dc-b1ad39589e49)
+<img src="https://github.com/user-attachments/assets/d5ae877d-0ca1-4552-a3dc-b1ad39589e49" width="800" />
 
 ###Admin Set Up for Kubernetes
 
