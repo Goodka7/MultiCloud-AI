@@ -59,9 +59,7 @@ resource "aws_s3_bucket" "my_bucket" {
 
 <img src="https://github.com/user-attachments/assets/7ba5e91f-c59a-4bfb-afe5-1cfc37e73bdd" width="800" />
 
-
-
-
+---
 
 > **Note:** The S3 bucket was set up to verify Terraform's configuration with AWS, test basic resource provisioning with a simple service, and ensure that resources were created correctly with the appropriate IAM permissions before moving on to the more complex DynamoDB setup.
 
