@@ -1065,3 +1065,241 @@ git push
 >**NOTE:** Remember to never commit the `google_credentials.json` file to version control. It should be added to your `.gitignore` file.
 
 ---
+
+### Next I updated Lambda Function Environmental Variables:
+
+## Terraform Steps
+
+### First I deleted the main.tf
+
+```
+cd terraform-project
+rm main.tf
+```
+
+### Next I recreated the file using nano
+
+```
+nano main.tf
+
+```
+
+### Then I put the following script inside the `main.tf`
+
+```
+provider "aws" {
+  region = "us-east-1" 
+}
+
+# Tables DynamoDB
+resource "aws_dynamodb_table" "cloudmart_products" {
+  name           = "cloudmart-products"
+  billing_mode   = "PAY_PER_REQUEST"
+  hash_key       = "id"
+
+  attribute {
+    name = "id"
+    type = "S"
+  }
+}
+
+resource "aws_dynamodb_table" "cloudmart_orders" {
+  name           = "cloudmart-orders"
+  billing_mode   = "PAY_PER_REQUEST"
+  hash_key       = "id"
+
+  attribute {
+    name = "id"
+    type = "S"
+  }
+  
+  stream_enabled   = true
+  stream_view_type = "NEW_AND_OLD_IMAGES"
+}
+
+resource "aws_dynamodb_table" "cloudmart_tickets" {
+  name           = "cloudmart-tickets"
+  billing_mode   = "PAY_PER_REQUEST"
+  hash_key       = "id"
+
+  attribute {
+    name = "id"
+    type = "S"
+  }
+}
+
+# IAM Role for Lambda function
+resource "aws_iam_role" "lambda_role" {
+  name = "cloudmart_lambda_role"
+
+  assume_role_policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Action = "sts:AssumeRole"
+        Effect = "Allow"
+        Principal = {
+          Service = "lambda.amazonaws.com"
+        }
+      }
+    ]
+  })
+}
+
+# IAM Policy for Lambda function
+resource "aws_iam_role_policy" "lambda_policy" {
+  name = "cloudmart_lambda_policy"
+  role = aws_iam_role.lambda_role.id
+
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Effect = "Allow"
+        Action = [
+          "dynamodb:Scan",
+          "dynamodb:GetRecords",
+          "dynamodb:GetShardIterator",
+          "dynamodb:DescribeStream",
+          "dynamodb:ListStreams",
+          "logs:CreateLogGroup",
+          "logs:CreateLogStream",
+          "logs:PutLogEvents"
+        ]
+        Resource = [
+          aws_dynamodb_table.cloudmart_products.arn,
+          aws_dynamodb_table.cloudmart_orders.arn,
+          "${aws_dynamodb_table.cloudmart_orders.arn}/stream/*",
+          aws_dynamodb_table.cloudmart_tickets.arn,
+          "arn:aws:logs:*:*:*"
+        ]
+      }
+    ]
+  })
+}
+
+# Lambda function for listing products
+resource "aws_lambda_function" "list_products" {
+  filename         = "list_products.zip"
+  function_name    = "cloudmart-list-products"
+  role             = aws_iam_role.lambda_role.arn
+  handler          = "index.handler"
+  runtime          = "nodejs20.x"
+  source_code_hash = filebase64sha256("list_products.zip")
+
+  environment {
+    variables = {
+      PRODUCTS_TABLE = aws_dynamodb_table.cloudmart_products.name
+    }
+  }
+}
+
+# Lambda permission for Bedrock
+resource "aws_lambda_permission" "allow_bedrock" {
+  statement_id  = "AllowBedrockInvoke"
+  action        = "lambda:InvokeFunction"
+  function_name = aws_lambda_function.list_products.function_name
+  principal     = "bedrock.amazonaws.com"
+}
+
+# Output the ARN of the Lambda function
+output "list_products_function_arn" {
+  value = aws_lambda_function.list_products.arn
+}
+
+# Lambda function for DynamoDB to BigQuery
+resource "aws_lambda_function" "dynamodb_to_bigquery" {
+  filename         = "../challenge-day2/backend/src/lambda/addToBigQuery/dynamodb_to_bigquery.zip"
+  function_name    = "cloudmart-dynamodb-to-bigquery"
+  role             = aws_iam_role.lambda_role.arn
+  handler          = "index.handler"
+  runtime          = "nodejs20.x"
+  source_code_hash = filebase64sha256("../challenge-day2/backend/src/lambda/addToBigQuery/dynamodb_to_bigquery.zip")
+
+  environment {
+    variables = {
+      GOOGLE_CLOUD_PROJECT_ID        = "cloudmart-451713"
+      BIGQUERY_DATASET_ID            = "cloudmart"
+      BIGQUERY_TABLE_ID              = "cloudmart-orders"
+      GOOGLE_APPLICATION_CREDENTIALS = "/var/task/google_credentials.json"
+    }
+  }
+}
+
+# Lambda event source mapping for DynamoDB stream
+resource "aws_lambda_event_source_mapping" "dynamodb_stream" {
+  event_source_arn  = aws_dynamodb_table.cloudmart_orders.stream_arn
+  function_name     = aws_lambda_function.dynamodb_to_bigquery.arn
+  starting_position = "LATEST"
+}
+```
+
+### Apply the changes using `terraform apply`
+
+```
+terraform apply
+```
+
+<img src="https://github.com/user-attachments/assets/b2f78c50-5d93-4e97-b8f6-492c153b2c5d" width="800">
+
+---
+
+## Azure Language Setup
+
+### I followed these steps to set up Azure Language for sentiment analysis:
+
+```
+1. Create an Azure Account:
+    - Go to the Azure portal (https://portal.azure.com/).
+    - Sign in or create a new account if you don't have one.
+2. Create a Resource:
+    - In the Azure portal, click "Create a resource".
+    - Search for "Language" and select it.
+3. Configure the Resource:
+    - Choose your subscription and resource group (create a new one if needed).
+    - Name the resource (e.g., "cloudmart-text-analytics").
+    - Choose your region and pricing tier.
+    - Name your instance (e.g., "cloud-instance")
+    - Click "Review + create", then "Create".
+4. Get the Endpoint and Key:
+    - Once the resource is created, go to its overview page.
+    - In the left menu, under "Resource Management", click "Keys and Endpoint".
+    - Copy the endpoint URL and one of the keys.
+```
+
+---
+
+## Change Deployment
+
+### I then changed directories:
+
+```
+cd ..
+cd backend
+```
+
+### Next I opened the cloudmart-backend.yaml to append it:
+
+```
+        - name: AZURE_ENDPOINT
+          value: "xxxx"
+        - name: AZURE_API_KEY
+          value: "xxxx"
+```
+<img src="https://github.com/user-attachments/assets/5aa6de49-c402-4a47-9935-afd269b793e1" width="500">
+
+### After that I built a new image
+
+<img src="https://github.com/user-attachments/assets/aa7f4bff-98e3-44e3-9988-03d3eb6ae35c" width="800">
+
+---
+
+>**NOTE:** Since I only set up the CI/CD pipeline for the frontend, I have to manually do the backend (steps above), ideally you would set up a pipeline for both front and back end.
+
+---
+
+### Finally, I used the `kubectl` tool to apply all changes.
+
+```
+kubectl apply -f cloudmart-backend.yaml
+```
