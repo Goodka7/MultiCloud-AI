@@ -59,15 +59,18 @@ resource "aws_s3_bucket" "my_bucket" {
 
 <img src="https://github.com/user-attachments/assets/7ba5e91f-c59a-4bfb-afe5-1cfc37e73bdd" width="800" />
 
+
+> **Note:** The S3 bucket was set up to verify Terraform's configuration with AWS, test basic resource provisioning with a simple service, and ensure that resources were created correctly with the appropriate IAM permissions before moving on to the more complex DynamoDB setup.
+
 ---
 
 ## DynamoDB Set Up
 
-### I editted the `main.tf` file so I can automate the creation of DynamoDB tables
+### I edited the `main.tf` file so I can automate the creation of DynamoDB tables
 
 <img src="https://github.com/user-attachments/assets/f4697f46-cbcf-4b3b-86d3-5fce97c07e4a" width="800" />
 
-### Using `terraform apply` I automate the table creation and remove the S3 bucket
+### Using `terraform apply` I automated the table creation and removed the S3 bucket
 
 <img src="https://github.com/user-attachments/assets/1fa6b58c-7a64-412a-a469-f6f5da42939d" width="800" />
 
