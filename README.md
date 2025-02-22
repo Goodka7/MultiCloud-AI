@@ -43,15 +43,15 @@ resource "aws_s3_bucket" "my_bucket" {
 
 ### Initialize Terraform
 
-![image](https://github.com/user-attachments/assets/aabee7cc-d647-4064-a3ad-3e7d78b10ec0)
+<img src="https://github.com/user-attachments/assets/aabee7cc-d647-4064-a3ad-3e7d78b10ec0" width="800" />
 
 ### Use Terraform plan to show what our config file will be doing
 
-![image](https://github.com/user-attachments/assets/9e9dca6f-6162-4923-9a35-9ce30f66dddd)
+<img src="(https://github.com/user-attachments/assets/9e9dca6f-6162-4923-9a35-9ce30f66dddd" width="800" />
 
 ### Apply via Terraform to automate the S3 bucket creation
 
-![image](https://github.com/user-attachments/assets/564daa6a-4377-4b7d-b945-74ea189c95e6)
+<img src="https://github.com/user-attachments/assets/564daa6a-4377-4b7d-b945-74ea189c95e6" width="800" />
 
 Veryify in s3 that the bucket was created.
 ![image](https://github.com/user-attachments/assets/7ba5e91f-c59a-4bfb-afe5-1cfc37e73bdd)
