@@ -77,7 +77,7 @@ resource "aws_s3_bucket" "my_bucket" {
 
 ---
 
-# STAGE 2 - Setting Up Docker
+# STAGE 2 - Docker Set Up
 
 ## Docker Set Up
 
@@ -186,11 +186,11 @@ Kept the default output format by clicking enter.
 
 ## EKS Set Up
 
-Install eksctl through the CLI.
-![image](https://github.com/user-attachments/assets/4fc9a275-10ed-4766-a72e-c2a2d4f9b669)
+### First I installed `eksctl` through the ES2 CLI
+<img src="https://github.com/user-attachments/assets/4fc9a275-10ed-4766-a72e-c2a2d4f9b669" width="800" />
 
-Install kubectl through the CLI.
-![image](https://github.com/user-attachments/assets/faf75f8b-a289-4970-8b8d-657a2744faa0)
+### Next I installed `kubectl` through the ES2 CLI
+<img src="https://github.com/user-attachments/assets/faf75f8b-a289-4970-8b8d-657a2744faa0" width="800" />
 
 ###Create an EKS Cluster:
 
