@@ -404,19 +404,22 @@ spec:
 ### I used the CLI to verify the services are running:
 <img src="https://github.com/user-attachments/assets/d162aac9-c885-4304-84ca-b7ecc14eea29" width="800" />
 
+---
+
 ## Wrap Up
 
 ### I decided to check the Web facing API to see what I have so far:
 
 <img src="https://github.com/user-attachments/assets/a2714e7f-2b52-43af-ac44-2297a308ceb2" width="800" />
 
-### Here we have a working API that we can add products to:
+### Here I have a working API that I can add products to:
 
 <img src="https://github.com/user-attachments/assets/6e0c72df-f7e3-422c-b627-8696f624b7ec" width="800" />
 <img src="https://github.com/user-attachments/assets/ce839899-bbb4-4d03-bb95-d87ef736accb" width="800" />
 
+---
 
-#STAGE 3 - Setting Up The Automation Pipeline
+# STAGE 3 - Pipeline Automation Set Up
 
 ###Create a GitHub repository so we can use it for a CI/CD pipeline to the Multicloud Enviroment.
 
