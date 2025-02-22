@@ -77,7 +77,7 @@ resource "aws_s3_bucket" "my_bucket" {
 
 ---
 
-## Part 2 - Setting Up Docker
+# Part 2 - Setting Up Docker
 
 ## Docker Set Up
 
