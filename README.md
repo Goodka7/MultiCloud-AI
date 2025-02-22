@@ -210,10 +210,10 @@ eksctl create cluster \
 ### I connected to the EKS cluster using kubectl configuration and then verified cluster connectivity
 <img src="https://github.com/user-attachments/assets/8dbbfdcd-4059-438a-9c6f-6a4add7bf152" width="800" />
 
-### I created a Role & Service Account to provide pods access to services used by the application (`DynamoDB`, `Bedrock`, etc):
+### I created a role and a service account to provide pods access to services used by the application (`DynamoDB`, `Bedrock`, etc):
 <img src="https://github.com/user-attachments/assets/53cbffa4-b08f-42d6-9a0e-db1d57cfac07" width="800" />
 
-//--> I gave the service account admin privileges for simplicity, however, in a real-world application you would follow the "Least Privilege/Zero Trust" model.
+>**NOTE** I gave the service account admin privileges for simplicity, however, in a real-world application you would follow the "Least Privilege/Zero Trust" model.
 
 ###Create an ECR Repository for the backened to house the Docker Image.
 
