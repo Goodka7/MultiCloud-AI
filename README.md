@@ -931,7 +931,13 @@ Here we have two functioning AI bots that are capable of handling customer queri
 ![image](https://github.com/user-attachments/assets/008347bc-2576-4dc9-9bd9-a7f5d704c762)
 ![image](https://github.com/user-attachments/assets/74958021-b027-4808-af82-aa7a418235d9)
 
-STAGE #5 - MultiCloud Set Up
+---
+
+#STAGE #5 - MultiCloud Set Up
+
+---
+
+>**SUMMARY:**
 
 ---
 
@@ -955,6 +961,14 @@ rm -rf $(find . -mindepth 1 -maxdepth 1 -not \( -name ".*" -o -name Dockerfile -
 ```
 <img src="https://github.com/user-attachments/assets/b9183530-22da-48db-8b5f-6413f2e7c523" width="300">
 
+### I downloaded the updated source code and unziped it (Backend)
+
+```
+wget  https://tcb-public-events.s3.amazonaws.com/mdac/resources/final/cloudmart-backend-final.zip
+unzip cloudmart-backend-final.zip
+```
+<img src="https://github.com/user-attachments/assets/07142000-a1f3-4cf4-9856-0211d14433fc" width="500">
+
 ### I cleaned up the existing application files except the `Dockerfile` and the `.yaml` file (Frontend):
 
 ```shell
@@ -963,3 +977,15 @@ cd challenge-day2/frontend
 rm -rf $(find . -mindepth 1 -maxdepth 1 -not \( -name ".*" -o -name Dockerfile -o -name "*.yaml" \))
 ```
 <img src="https://github.com/user-attachments/assets/cc9e2359-723e-44bb-a6db-1f5218369634" width="300">
+
+### I downloaded the updated source code and unziped it (Frontend)
+
+```
+wget  https://tcb-public-events.s3.amazonaws.com/mdac/resources/final/cloudmart-frontend-final.zip
+unzip cloudmart-frontend-final.zip
+git add -A
+git commit -m "final code"
+git push 
+```
+<img src="https://github.com/user-attachments/assets/11cc3198-9a22-42b8-9e95-e76df134b216" width="500">
+![image](https://github.com/user-attachments/assets/70e97697-4728-470a-a164-7474d19c126a)
