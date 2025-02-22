@@ -43,35 +43,37 @@ resource "aws_s3_bucket" "my_bucket" {
 }
 ```
 
-### Initialize Terraform
-
-### Using `terraform init` I initialized Terraform.
+### I used `terraform init` I initialized Terraform.
 
 <img src="https://github.com/user-attachments/assets/aabee7cc-d647-4064-a3ad-3e7d78b10ec0" width="800" />
 
-### Use `terraform plan` to show what our config file will be doing
+### I then used `terraform plan` to review and make sure the services are configured correctly
 
 <img src="https://github.com/user-attachments/assets/9e9dca6f-6162-4923-9a35-9ce30f66dddd" width="800" />
 
-### Use `terraform apply` to automate the S3 bucket creation
+### Next I used `terraform apply` to automate the S3 bucket creation
 
 <img src="https://github.com/user-attachments/assets/564daa6a-4377-4b7d-b945-74ea189c95e6" width="800" />
 
-### Veryify in s3 that the bucket was created
+### After that, I manually verified in S3 that the bucket was created
 
 <img src="https://github.com/user-attachments/assets/7ba5e91f-c59a-4bfb-afe5-1cfc37e73bdd" width="800" />
 
-### Edit the `main.tf` file to create DynamoDB tables
+---
+
+## DynamoDB Set Up
+
+### I editted the `main.tf` file so I can automate the creation of DynamoDB tables
 
 <img src="https://github.com/user-attachments/assets/f4697f46-cbcf-4b3b-86d3-5fce97c07e4a" width="800" />
 
-### `terraform apply` to automate the table creation and remove the S3 bucket
+### Using `terraform apply` I automate the table creation and remove the S3 bucket
 
 <img src="https://github.com/user-attachments/assets/1fa6b58c-7a64-412a-a469-f6f5da42939d" width="800" />
 
 ---
 
-## Docker set up
+## Docker Set Up
 
 ### Install Docker
 
