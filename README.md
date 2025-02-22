@@ -303,7 +303,7 @@ spec:
 I changed the "image:" line to the ":latest" URI Image from the ECR instance I created.
 ```
 
-### I appled the .yaml configure file using the CLI tool
+### I appled the `.yaml` configure file using the CLI tool
 
 ```bash
 kubectl apply -f cloudmart-backend.yaml
@@ -315,26 +315,34 @@ kubectl apply -f cloudmart-backend.yaml
 
 <img src="https://github.com/user-attachments/assets/88c5ff87-814b-43b0-8dcc-0d1c61f90d08" width="800" />
 
-Change back to the frontend directory to work on the front end.
+### I changed to the frontend directory to work on the front end
 
 ```
 cd ..
 cd frontend
 ```
 
-Use the CLI to get the URL for the Kubernetes API
+### I then used the CLI to get the URL for the Kubernetes API
+
 <img src="https://github.com/user-attachments/assets/6dd00d33-5a80-4470-91c5-afd396f6af1e" width="800" />
 
-Copy the URL to appened the following:
+### Next I copied the URL to appened the following:
 
+```
 nano .env
+```
+
+```
 VITE_API_BASE_URL=http://<your_url_kubernetes_api>:5000/api
+```
 
-###Create an ECR Repository for the frontend.
+### After that I created an ECR Repository for the frontend.
 
-Name the repository and leave all other options as default > Click create.
+<img src="https://github.com/user-attachments/assets/a3fa488d-6120-4c88-8317-b385d6c107c6" width="800" />
 
-![image](https://github.com/user-attachments/assets/a3fa488d-6120-4c88-8317-b385d6c107c6)
+```
+I named the repository and left all other options as default > Clicked create.
+```
 
 Follow the steps for ECR onboarding like we did for the backend.
 ![image](https://github.com/user-attachments/assets/40ff1f55-ea25-40f6-9171-89f1b316c375)
