@@ -931,4 +931,35 @@ Here we have two functioning AI bots that are capable of handling customer queri
 ![image](https://github.com/user-attachments/assets/008347bc-2576-4dc9-9bd9-a7f5d704c762)
 ![image](https://github.com/user-attachments/assets/74958021-b027-4808-af82-aa7a418235d9)
 
+STAGE #5 - MultiCloud Set Up
 
+---
+
+>**NOTE:** The next few steps are a quick way to create a backup and clear the folders out so we can move forward, in the real-world we would do this much differently.
+
+---
+
+
+### I backed up the existing folders:
+
+```
+cp -R challenge-day2/ challenge-day2_bkp
+cp -R terraform-project/ terraform-project_bkp
+```
+
+### I cleaned up the existing application files except the `Dockerfile` and the `.yaml` file (Backend):
+
+```shell
+cd challenge-day2/backend
+rm -rf $(find . -mindepth 1 -maxdepth 1 -not \( -name ".*" -o -name Dockerfile -o -name "*.yaml" \))
+```
+<img src="https://github.com/user-attachments/assets/b9183530-22da-48db-8b5f-6413f2e7c523" width="300">
+
+### I cleaned up the existing application files except the `Dockerfile` and the `.yaml` file (Frontend):
+
+```shell
+cd ../..
+cd challenge-day2/frontend
+rm -rf $(find . -mindepth 1 -maxdepth 1 -not \( -name ".*" -o -name Dockerfile -o -name "*.yaml" \))
+```
+<img src="https://github.com/user-attachments/assets/cc9e2359-723e-44bb-a6db-1f5218369634" width="300">
