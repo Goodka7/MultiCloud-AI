@@ -1,5 +1,10 @@
-##AWS Virtual Machine Set Up
+![Multi-Cloud, Artificial Intelligence](https://github.com/user-attachments/assets/c584d492-45a7-4964-b7ea-c9d7e13eba49)
+
+
 STAGE 1
+
+##AWS Virtual Machine Set Up
+
 Provision a VM with EC2
 ![image](https://github.com/user-attachments/assets/f6f8e75c-e9a4-46cd-b480-c0cac552cb6c)
 
