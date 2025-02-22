@@ -93,6 +93,8 @@ OPENAI_API_KEY=<your-openai-api-key>
 OPENAI_ASSISTANT_ID=<your-openai-assistant-id>
 ```
 
+<img src="https://github.com/user-attachments/assets/d47c7ce0-2224-437a-9ba8-b4535c0fbaaf" width="800" />
+
 ### Make a `Dockerfile` to set up a containerized environment for a `Node.js` application, installs dependencies, and specifies how to run the application:
 
 ```Nano
@@ -104,8 +106,6 @@ COPY . .
 EXPOSE 5000
 CMD ["npm", "start"]
 ```
-
-![image](https://github.com/user-attachments/assets/d47c7ce0-2224-437a-9ba8-b4535c0fbaaf)
 
 Make a new directory for front-end and download front-end resources.
 ![image](https://github.com/user-attachments/assets/7174eb15-83e6-4ee3-ac9a-7ddbc010c42a)
