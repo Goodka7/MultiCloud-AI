@@ -49,7 +49,7 @@ resource "aws_s3_bucket" "my_bucket" {
 
 <img src="https://github.com/user-attachments/assets/9e9dca6f-6162-4923-9a35-9ce30f66dddd" width="800" />
 
-### Apply via Terraform to automate the S3 bucket creation
+### Use `terraform apply` to automate the S3 bucket creation
 
 <img src="https://github.com/user-attachments/assets/564daa6a-4377-4b7d-b945-74ea189c95e6" width="800" />
 
