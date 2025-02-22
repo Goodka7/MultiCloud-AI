@@ -247,7 +247,7 @@ cd backend
 <img src="https://github.com/user-attachments/assets/9e7c6485-77d1-4cd6-a51b-6754e5d8c465" width="800" />
 <img src="https://github.com/user-attachments/assets/fb9d651d-82b9-4c2b-bb43-9222c2410595" width="800" />
 
-### I created a Kubernetes deployment file (YAML) for the Backend.
+### I created a Kubernetes deployment file for the Backend
 
 `nano cloudmart-backend.yaml`
 
