@@ -144,14 +144,15 @@ CMD ["serve", "-s", ".", "-l", "5001"]
 
 ---
 
-### Kubernetes Set Up
+## Kubernetes Set Up
 
-Create a user named eksuser in IAM with Administrative privileges.
-![image](https://github.com/user-attachments/assets/54000981-936e-4fe5-89fe-7d697aab1a87)
+### I created a user named `eksuser` in IAM with administrative privileges
 
-Autheniticate the Admin(user).
+<img src="https://github.com/user-attachments/assets/54000981-936e-4fe5-89fe-7d697aab1a87" width="500" />
 
-Create access key in IAM:
+### Next I autheniticated the `eksuser` admin:
+
+> Create access key in IAM:
 Click Users> Click "eksuser" > Click "Create Access Key"
 Select CLI > Check the confirmation box > Click Next
 Click Create access key
