@@ -220,7 +220,7 @@ eksctl create cluster \
 ---
 ## ECR Set Up
 
-### Created an ECR Repository for the backened to "dock" the Docker Image.
+### I created an ECR Repository for the backened to "dock" the Docker Image.
 
 <img src="https://github.com/user-attachments/assets/45004723-f568-4b18-a8fd-21eafe11d34a" width="800" />
 
@@ -300,24 +300,30 @@ spec:
 ```
       
 ```
-The "image:" line needs to be replaced with the latest URI Image from the ECR instance we created.
+I changed the "image:" line to the ":latest" URI Image from the ECR instance I created.
 ```
 
-Apply the .yaml configure file using the CLI tool.
+### I appled the .yaml configure file using the CLI tool
 
+```bash
 kubectl apply -f cloudmart-backend.yaml
-![image](https://github.com/user-attachments/assets/78e9f2d4-2621-43cf-8601-f66560b7afa5)
+```
 
-Monitor the status of objects being created and obtain the public IP generated for the API.
-![image](https://github.com/user-attachments/assets/88c5ff87-814b-43b0-8dcc-0d1c61f90d08)
+<img src="https://github.com/user-attachments/assets/78e9f2d4-2621-43cf-8601-f66560b7afa5" width="800" />
+
+### I monitored the status of objects being created and obtained the public IP generated for the API
+
+<img src="https://github.com/user-attachments/assets/88c5ff87-814b-43b0-8dcc-0d1c61f90d08" width="800" />
 
 Change back to the frontend directory to work on the front end.
 
+```
 cd ..
 cd frontend
+```
 
 Use the CLI to get the URL for the Kubernetes API
-![image](https://github.com/user-attachments/assets/6dd00d33-5a80-4470-91c5-afd396f6af1e)
+<img src="https://github.com/user-attachments/assets/6dd00d33-5a80-4470-91c5-afd396f6af1e" width="800" />
 
 Copy the URL to appened the following:
 
