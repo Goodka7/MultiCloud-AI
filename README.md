@@ -1303,3 +1303,32 @@ cd backend
 ```
 kubectl apply -f cloudmart-backend.yaml
 ```
+## Wrap Up
+
+Create new order
+![image](https://github.com/user-attachments/assets/a12ae9f6-8851-48ec-b793-f00a27ee3a22)
+
+Confirm order in cart
+![image](https://github.com/user-attachments/assets/ae744ae9-66c6-42f6-a8d4-9def2f662ee4)
+
+Confirm order placement
+![image](https://github.com/user-attachments/assets/9b84c25f-ddae-461d-ad41-6bf6ff231a6a)
+
+View confirmation
+![image](https://github.com/user-attachments/assets/6cfee2a9-3417-4963-8161-7a3bb4e72589)
+
+Good look in BigQuery to see if the data was collected
+![image](https://github.com/user-attachments/assets/42ef2630-0bfa-4e12-9a8c-94f46c6d2b6d)
+this confirms the lambda function and the stream are working.
+
+Made a conversation that was very negative
+![image](https://github.com/user-attachments/assets/725a0d47-ec8b-43cb-ad55-74a293475a6c)
+
+Viewing the tickets the API connected to Azure and gave it a sentiment using the language API
+![image](https://github.com/user-attachments/assets/3f6a513b-0587-433f-ad8c-62a4c836911e)
+
+Made a very positive conversation
+![image](https://github.com/user-attachments/assets/57b078ab-62e4-46e3-95d3-e91e740a97a5)
+
+Viewing the tickets the API connected to Azure and gave it a sentiment using the language API
+![image](https://github.com/user-attachments/assets/062a2012-e499-470d-8fbb-52c7e20c09c1)
