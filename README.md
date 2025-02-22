@@ -223,7 +223,7 @@ eksctl create cluster \
 
 Name the repository and leave all other options as default > Click create.
 
-![image](https://github.com/user-attachments/assets/45004723-f568-4b18-a8fd-21eafe11d34a)
+<img src="https://github.com/user-attachments/assets/45004723-f568-4b18-a8fd-21eafe11d34a" width="800" />
 
 ---
 
@@ -231,10 +231,12 @@ Name the repository and leave all other options as default > Click create.
 
 ---
 
-On the CLI switch to the backend directory.
+### Next I changed to the backend directory on the CLI
 
+```bash
 cd ..
 cd backend
+```
 
 Follow the steps for ECR onboarding.
 ![image](https://github.com/user-attachments/assets/80cdb5f4-812c-49ee-902d-299043ee4aa2)
