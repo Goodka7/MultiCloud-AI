@@ -81,7 +81,7 @@ resource "aws_s3_bucket" "my_bucket" {
 
 ## Docker Set Up
 
-### I used the CLI to install Docker
+### I used the CLI on EC2 to install Docker
 
 <img src="https://github.com/user-attachments/assets/5af95d6c-33c4-463a-880c-db0b969e4adf" width="800" />
 <img src="https://github.com/user-attachments/assets/5786f4d6-03d9-4e12-8ddb-75ffe13658cb" width="800" />
