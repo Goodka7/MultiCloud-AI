@@ -1,4 +1,5 @@
 <img src="https://github.com/user-attachments/assets/c584d492-45a7-4964-b7ea-c9d7e13eba49" width="500" />
+<img src="https://github.com/user-attachments/assets/23065407-8251-467c-b7dd-17e617b8832f" width="500" />
 
 # STAGE 1 - Foundational Services Set Up
 
