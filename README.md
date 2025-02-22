@@ -398,21 +398,25 @@ spec:
 
 ---
 
-Apply the deployment file through the CLI tool:
-![image](https://github.com/user-attachments/assets/16b69edf-6197-4484-beda-6e491773fa6c)
+### I applied the deployment file through the CLI tool
+<img src="https://github.com/user-attachments/assets/16b69edf-6197-4484-beda-6e491773fa6c" width="800" />
 
-Use the CLI to verify the services are running:
-![image](https://github.com/user-attachments/assets/d162aac9-c885-4304-84ca-b7ecc14eea29)
+### I used the CLI to verify the services are running:
+<img src="https://github.com/user-attachments/assets/d162aac9-c885-4304-84ca-b7ecc14eea29" width="800" />
 
-This is what we have so far:
+## Wrap Up
 
-![image](https://github.com/user-attachments/assets/a2714e7f-2b52-43af-ac44-2297a308ceb2)
+### I decided to check the Web facing API to see what I have so far:
 
-Here we have a working API that we can add products to:
+<img src="https://github.com/user-attachments/assets/a2714e7f-2b52-43af-ac44-2297a308ceb2" width="800" />
 
-![image](https://github.com/user-attachments/assets/6e0c72df-f7e3-422c-b627-8696f624b7ec)
-![image](https://github.com/user-attachments/assets/ce839899-bbb4-4d03-bb95-d87ef736accb)
+### Here we have a working API that we can add products to:
 
+<img src="https://github.com/user-attachments/assets/6e0c72df-f7e3-422c-b627-8696f624b7ec" width="800" />
+<img src="https://github.com/user-attachments/assets/ce839899-bbb4-4d03-bb95-d87ef736accb" width="800" />
+
+
+#STAGE 3 - Setting Up The Automation Pipeline
 
 ###Create a GitHub repository so we can use it for a CI/CD pipeline to the Multicloud Enviroment.
 
