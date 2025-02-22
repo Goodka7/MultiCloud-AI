@@ -148,7 +148,7 @@ CMD ["serve", "-s", ".", "-l", "5001"]
 
 ### I created a user named `eksuser` in IAM with administrative privileges
 
-<img src="https://github.com/user-attachments/assets/54000981-936e-4fe5-89fe-7d697aab1a87" width="800" />
+<img src="https://github.com/user-attachments/assets/54000981-936e-4fe5-89fe-7d697aab1a87" width="500" />
 
 ### Next I autheniticated the `eksuser` admin:
 
@@ -161,14 +161,15 @@ Click Create access key
 
 ### I copied the `access key` from the dashcreen by clicking the copy button.
 
-<img src="https://github.com/user-attachments/assets/56bf8f56-1d58-4b33-8bbd-cee23c75d019" width="500" />
+<img src="https://github.com/user-attachments/assets/56bf8f56-1d58-4b33-8bbd-cee23c75d019" width="300" />
 
 
-Run command aws configure. It will ask you for the access key, paste it there and hit enter.
-![image](https://github.com/user-attachments/assets/51b2c0e3-9d9f-4253-a49d-186d76a2d69c)
+### Ran command `aws configure` to enter access key
+
+<img src="https://github.com/user-attachments/assets/51b2c0e3-9d9f-4253-a49d-186d76a2d69c" width="300" />
 
 You will then need to repeat this step with the Secret access key.
-![image](https://github.com/user-attachments/assets/3c83efe5-34bb-4020-8688-48dc4673ebbc)
+<img src="https://github.com/user-attachments/assets/3c83efe5-34bb-4020-8688-48dc4673ebbc" width="300" />
 
 Enter the region you are working with in the next step, for me it's us-west-2
 Keep the default output format by clicking enter.
