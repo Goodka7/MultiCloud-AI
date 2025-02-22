@@ -1003,19 +1003,22 @@ git push
 1. Create a Google Cloud Project:
     - Go to the Google Cloud Console (https://console.cloud.google.com/).
     - Click on the project dropdown and select "New Project".
-    - Name the project "CloudMart" and create it.
+    - Name the project "CloudMart" and click "create".
 2. Enable BigQuery API:
-    - In the Google Cloud Console, go to "APIs & Services" > "Dashboard".
-    - Click "+ ENABLE APIS AND SERVICES".
+    - In the Google Cloud Console (the hamburger menu on the top left of the dashboard).
+    - Click "APIS & SERVICES" to open the dashboard.
+    - Click "+ ENABLE APIS AND SERVICES" at the top.
     - Search for "BigQuery API" and enable it.
 3. Create a BigQuery Dataset:
     - In the Google Cloud Console, go to "BigQuery".
     - In the Explorer pane, click on your project name.
-    - Click "CREATE DATASET".
+    - Click the menu on the right.
+    - Click "Create dataset".
     - Set the Dataset ID to "cloudmart".
-    - Choose your data location and click "CREATE DATASET".
+    - Click "Create dataset".
 4. Create a BigQuery Table:
-    - In the dataset you just created, click "CREATE TABLE".
+    - In the dataset you just created, click the menu on the right.
+    - Click "Create table".
     - Set the Table name to "cloudmart-orders".
     - Define the schema according to your order structure. For example:
         - id: STRING
@@ -1024,12 +1027,38 @@ git push
         - total: FLOAT
         - status: STRING
         - createdAt: TIMESTAMP
-    - Click "CREATE TABLE".
+    - Click "Create table".
 5. Create Service Account and Key:
     - In the Google Cloud Console, go to "IAM & Admin" > "Service Accounts".
-    - Click "CREATE SERVICE ACCOUNT".
-    - Name it "cloudmart-bigquery-sa" and grant it the "BigQuery Data Editor" role.
+    - Click "Create service account".
+    - Name it "cloudmart-bigquery-sa" and click "Create and Continue"
+    - Grant it the "BigQuery Data Editor" role.
     - After creating, click on the service account, go to the "Keys" tab, and click "ADD KEY" > "Create new key".
     - Choose JSON as the key type and create.
     - Save the downloaded JSON file as `google_credentials.json`.
+6. Configure Lambda Function:
+    - Navigate to the root directory of your project.
+    - Enter the Lambda function directory:
+        
+        cd challenge-day2/backend/src/lambda/addToBigQuery
+        
+    - Install the required dependencies:
+        
+        sudo yum install npm
+        npm install
+                
+    - Edit the `google_credentials.json` file in this directory and place the content of your key.
+**NOTE:** We are copy and pasting for simplicity's sake, but in the real-world this would not but the best practice, there are many other ways to do this.
+    - Create a zip file of the entire directory:
+        
+        zip -r dynamodb_to_bigquery.zip .
+        
+    - This zip file will be used when creating or updating the Lambda function.
+    - Return to the root directory of your project:
+        
+        cd ../..
+        
+7. Update Lambda Function Environment Variables:
+
+Remember to never commit the `google_credentials.json` file to version control. It should be added to your `.gitignore` file.
 ```
