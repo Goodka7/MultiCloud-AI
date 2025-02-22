@@ -182,6 +182,8 @@ Entered the region: us-west-2
 Kept the default output format by clicking enter.
 ```
 
+---
+
 ## EKS Set Up
 
 Install eksctl through the CLI.
