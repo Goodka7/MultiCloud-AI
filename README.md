@@ -192,7 +192,7 @@ Kept the default output format by clicking enter.
 ### Next I installed `kubectl` through the ES2 CLI
 <img src="https://github.com/user-attachments/assets/faf75f8b-a289-4970-8b8d-657a2744faa0" width="800" />
 
-### Create an EKS Cluster:
+### Then I created an EKS Cluster via the ES2 CLI:
 
 ```
 eksctl create cluster \
@@ -207,11 +207,11 @@ eksctl create cluster \
 
 <img src="https://github.com/user-attachments/assets/5a8b46b6-a575-4512-b73c-89b12fc47d41" width="800" />
 
-Connect to the EKS cluster using the kubectl configuration and verify cluster connectivity.
+### I connected to the EKS cluster using kubectl configuration and then verified cluster connectivity
 <img src="https://github.com/user-attachments/assets/8dbbfdcd-4059-438a-9c6f-6a4add7bf152" width="800" />
 
-Create a Role & Service Account to provide pods access to services used by the application (DynamoDB, Bedrock, etc):
-![image](https://github.com/user-attachments/assets/53cbffa4-b08f-42d6-9a0e-db1d57cfac07)
+### I created a Role & Service Account to provide pods access to services used by the application (`DynamoDB`, `Bedrock`, etc):
+<img src="https://github.com/user-attachments/assets/53cbffa4-b08f-42d6-9a0e-db1d57cfac07" width="800" />
 
 //--> I gave the service account admin privileges for simplicity, however, in a real-world application you would follow the "Least Privilege/Zero Trust" model.
 
