@@ -153,10 +153,10 @@ CMD ["serve", "-s", ".", "-l", "5001"]
 ### Next I autheniticated the `eksuser` admin:
 
 ```
-Create access key in IAM:
-Click Users> Click "eksuser" > Click "Create Access Key"
-Select CLI > Check the confirmation box > Click Next
-Click Create access key
+Created access key in IAM:
+Clicked Users> Clicked "eksuser" > Clicked "Create Access Key"
+Selected CLI > Checked the confirmation box > Clicked Next
+Clicked Create access key
 ```
 
 ### I copied the `access key` from the dashcreen by clicking the copy button.
@@ -164,17 +164,19 @@ Click Create access key
 <img src="https://github.com/user-attachments/assets/56bf8f56-1d58-4b33-8bbd-cee23c75d019" width="300" />
 
 
-### Ran command `aws configure` to enter access key
+### Ran command `aws configure` in CLI to enter access key
 
 <img src="https://github.com/user-attachments/assets/51b2c0e3-9d9f-4253-a49d-186d76a2d69c" width="500" />
 
-### You will then need to repeat this step with the Secret access key.
+### I then copied the secret access key and pasted it into the CLI
 <img src="https://github.com/user-attachments/assets/3c83efe5-34bb-4020-8688-48dc4673ebbc" width="500" />
 
-Enter the region you are working with in the next step, for me it's us-west-2
-Keep the default output format by clicking enter.
+```
+Entered the region: us-west-2
+Kept the default output format by clicking enter.
+```
 
-##Kubernetes Set Up
+## EKS Set Up
 
 Install eksctl through the CLI.
 ![image](https://github.com/user-attachments/assets/4fc9a275-10ed-4766-a72e-c2a2d4f9b669)
