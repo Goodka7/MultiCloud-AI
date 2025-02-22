@@ -6,11 +6,11 @@
 
 ## AWS Virtual Machine Set Up
 
-### Provision a VM using EC2
+### First I provisioned a VM using EC2
 
 <img src="https://github.com/user-attachments/assets/f6f8e75c-e9a4-46cd-b480-c0cac552cb6c" width="800" />
 
-### Launch the EC2 Instance
+### Next, I launched the EC2 Instance to make use of the CLI
 
 <img src="https://github.com/user-attachments/assets/1c208424-1f25-4ebf-ae0b-770db497a741" width="800" />
 
@@ -18,7 +18,7 @@
 
 ## Terraform Set Up
 
-### Install Terraform
+### Using the CLI, I installed Terraform on my EC2 VM
 
 <img src="https://github.com/user-attachments/assets/1907d4ad-3a76-4100-88b4-5b7cd224255d" width="800" />
 
