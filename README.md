@@ -218,16 +218,15 @@ eksctl create cluster \
 >**NOTE:** I gave the service account admin privileges for simplicity, however, in a real-world application you would follow the "Least Privilege/Zero Trust" model.
 
 ---
+## ECR Set Up
 
 ### Created an ECR Repository for the backened to "dock" the Docker Image.
 
-<img src="https://github.com/user-attachments/assets/84cb8f36-294e-4209-be76-10d79142fd21" width="500" />
+<img src="https://github.com/user-attachments/assets/45004723-f568-4b18-a8fd-21eafe11d34a" width="800" />
 
 ```
  Name the repository and leave all other options as default > Click create.
 ```
-
-<img src="https://github.com/user-attachments/assets/45004723-f568-4b18-a8fd-21eafe11d34a" width="800" />
 
 ---
 
@@ -242,14 +241,16 @@ cd ..
 cd backend
 ```
 
-Follow the steps for ECR onboarding.
-![image](https://github.com/user-attachments/assets/80cdb5f4-812c-49ee-902d-299043ee4aa2)
-![image](https://github.com/user-attachments/assets/9e7c6485-77d1-4cd6-a51b-6754e5d8c465)
-![image](https://github.com/user-attachments/assets/fb9d651d-82b9-4c2b-bb43-9222c2410595)
+### I followed the steps for ECR onboarding:
+<img src="https://github.com/user-attachments/assets/80cdb5f4-812c-49ee-902d-299043ee4aa2" width="500" />
+<img src="https://github.com/user-attachments/assets/9e7c6485-77d1-4cd6-a51b-6754e5d8c465" width="500" />
+<img src="https://github.com/user-attachments/assets/fb9d651d-82b9-4c2b-bb43-9222c2410595" width="500" />
 
-Create a Kubernetes deployment file (YAML) for the Backend.
-nano cloudmart-backend.yaml
+### I created a Kubernetes deployment file (YAML) for the Backend.
 
+`nano cloudmart-backend.yaml`
+
+```
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -295,8 +296,11 @@ spec:
     - protocol: TCP
       port: 5000
       targetPort: 5000
+```
       
+```
 The "image:" line needs to be replaced with the latest URI Image from the ECR instance we created.
+```
 
 Apply the .yaml configure file using the CLI tool.
 
