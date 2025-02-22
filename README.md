@@ -2,9 +2,9 @@
 <br></br>
 <img src="https://github.com/user-attachments/assets/23065407-8251-467c-b7dd-17e617b8832f" width="500" />
 
-# STAGE 1 - Foundational Services Set Up
+# STAGE 1 - Foundational Services Setup
 
-## AWS Virtual Machine Set Up
+## AWS Virtual Machine Setup
 
 ### First I provisioned a VM using EC2
 
@@ -16,7 +16,7 @@
 
 ---
 
-## Terraform Set Up
+## Terraform Setup
 
 ### Using the CLI, I installed Terraform on my EC2 VM
 
@@ -65,7 +65,7 @@ resource "aws_s3_bucket" "my_bucket" {
 
 ---
 
-## DynamoDB Set Up
+## DynamoDB Setup
 
 ### I edited the `main.tf` file so I can automate the creation of DynamoDB tables
 
@@ -77,9 +77,9 @@ resource "aws_s3_bucket" "my_bucket" {
 
 ---
 
-# STAGE 2 - Docker Set Up
+# STAGE 2 - Docker Setup
 
-## Docker Set Up
+## Docker Setup
 
 ### I used the CLI on EC2 to install Docker
 
@@ -144,7 +144,7 @@ CMD ["serve", "-s", ".", "-l", "5001"]
 
 ---
 
-## Kubernetes Set Up
+## Kubernetes Setup
 
 ### I created a user named `eksuser` in IAM with administrative privileges
 
@@ -184,7 +184,7 @@ Kept the default output format by clicking enter.
 
 ---
 
-## EKS Set Up
+## EKS Setup
 
 ### First I installed `eksctl` through the ES2 CLI
 <img src="https://github.com/user-attachments/assets/4fc9a275-10ed-4766-a72e-c2a2d4f9b669" width="800" />
@@ -218,7 +218,7 @@ eksctl create cluster \
 >**NOTE:** I gave the service account admin privileges for simplicity, however, in a real-world application you would follow the "Least Privilege/Zero Trust" model.
 
 ---
-## ECR Set Up
+## ECR Setup
 
 ### I created an ECR Repository for the backened to "dock" the Docker Image
 <img src="https://github.com/user-attachments/assets/45004723-f568-4b18-a8fd-21eafe11d34a" width="800" />
@@ -412,7 +412,7 @@ spec:
 
 ---
 
-# STAGE 3 - Pipeline Automation Set Up
+# STAGE 3 - Pipeline Automation Setup
 
 ###Create a GitHub repository so we can use it for a CI/CD pipeline to the Multicloud Enviroment.
 
@@ -696,7 +696,7 @@ This script creates an IAM role and policy for a Lambda function, the Lambda fun
 terraform apply in order to push changes.
 ![image](https://github.com/user-attachments/assets/743c2081-d185-47fb-affc-68557a25fff9)
 
-Set up Amazon Bedrock
+Setup Amazon Bedrock
 \\---> We will be using the Claude 3 Sonnet verison even though its considered a legacy, this is because the set up is very easy.
 You must request the agent, you can do so by searching the list for the agent you wish to use.
 ![image](https://github.com/user-attachments/assets/7a7ef9fa-b296-45dc-9bbf-6baefaa04bf0)
@@ -867,7 +867,7 @@ Name the alias `cloudmart-prod`.
 Select the most recent version of the agent.
 Click on `Create alias` to finalize.
 
-##Set up OpenAI Agent
+##Setup OpenAI Agent
 
 Access the OpenAI platform (https://platform.openai.com/).
 Log in.
@@ -933,7 +933,7 @@ Here we have two functioning AI bots that are capable of handling customer queri
 
 ---
 
-#STAGE #5 - MultiCloud Set Up
+#STAGE #5 - MultiCloud Setup
 
 ---
 
@@ -983,8 +983,53 @@ rm -rf $(find . -mindepth 1 -maxdepth 1 -not \( -name ".*" -o -name Dockerfile -
 ```
 wget  https://tcb-public-events.s3.amazonaws.com/mdac/resources/final/cloudmart-frontend-final.zip
 unzip cloudmart-frontend-final.zip
+```
+<img src="https://github.com/user-attachments/assets/11cc3198-9a22-42b8-9e95-e76df134b216" width="800">
+
+### I used the CI/CD pipeline to push the updates
+
+```
 git add -A
 git commit -m "final code"
 git push 
 ```
-<img src="https://github.com/user-attachments/assets/11cc3198-9a22-42b8-9e95-e76df134b216" width="800">
+<img src="https://github.com/user-attachments/assets/4f85a39a-1916-400a-bbce-c228bdcf0ac2" width="800">
+
+## Google Cloud BigQuery Setup
+
+### I followed these steps to set up Google Cloud BigQuery for CloudMart:
+
+```
+1. Create a Google Cloud Project:
+    - Go to the Google Cloud Console (https://console.cloud.google.com/).
+    - Click on the project dropdown and select "New Project".
+    - Name the project "CloudMart" and create it.
+2. Enable BigQuery API:
+    - In the Google Cloud Console, go to "APIs & Services" > "Dashboard".
+    - Click "+ ENABLE APIS AND SERVICES".
+    - Search for "BigQuery API" and enable it.
+3. Create a BigQuery Dataset:
+    - In the Google Cloud Console, go to "BigQuery".
+    - In the Explorer pane, click on your project name.
+    - Click "CREATE DATASET".
+    - Set the Dataset ID to "cloudmart".
+    - Choose your data location and click "CREATE DATASET".
+4. Create a BigQuery Table:
+    - In the dataset you just created, click "CREATE TABLE".
+    - Set the Table name to "cloudmart-orders".
+    - Define the schema according to your order structure. For example:
+        - id: STRING
+        - items: JSON
+        - userEmail: STRING
+        - total: FLOAT
+        - status: STRING
+        - createdAt: TIMESTAMP
+    - Click "CREATE TABLE".
+5. Create Service Account and Key:
+    - In the Google Cloud Console, go to "IAM & Admin" > "Service Accounts".
+    - Click "CREATE SERVICE ACCOUNT".
+    - Name it "cloudmart-bigquery-sa" and grant it the "BigQuery Data Editor" role.
+    - After creating, click on the service account, go to the "Keys" tab, and click "ADD KEY" > "Create new key".
+    - Choose JSON as the key type and create.
+    - Save the downloaded JSON file as `google_credentials.json`.
+```
