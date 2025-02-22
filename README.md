@@ -213,7 +213,11 @@ eksctl create cluster \
 ### I created a role and a service account to provide pods access to services used by the application (`DynamoDB`, `Bedrock`, etc):
 <img src="https://github.com/user-attachments/assets/53cbffa4-b08f-42d6-9a0e-db1d57cfac07" width="800" />
 
->**NOTE** I gave the service account admin privileges for simplicity, however, in a real-world application you would follow the "Least Privilege/Zero Trust" model.
+---
+
+>**NOTE:** I gave the service account admin privileges for simplicity, however, in a real-world application you would follow the "Least Privilege/Zero Trust" model.
+
+---
 
 ###Create an ECR Repository for the backened to house the Docker Image.
 
@@ -221,7 +225,11 @@ Name the repository and leave all other options as default > Click create.
 
 ![image](https://github.com/user-attachments/assets/45004723-f568-4b18-a8fd-21eafe11d34a)
 
-//--> I am using a public repository for the lab, however, in the real-world you would use a private repository so you don't risk exposing your docker image to the public.
+---
+
+>**NOTE:** I am using a public repository for the lab, however, in the real-world you would use a private repository so you don't risk exposing your docker image to the public.
+
+---
 
 On the CLI switch to the backend directory.
 
