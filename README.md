@@ -1058,7 +1058,10 @@ git push
         
         cd ../..
         
-7. Update Lambda Function Environment Variables:
-
-Remember to never commit the `google_credentials.json` file to version control. It should be added to your `.gitignore` file.
 ```
+
+---
+
+>**NOTE:** Remember to never commit the `google_credentials.json` file to version control. It should be added to your `.gitignore` file.
+
+---
