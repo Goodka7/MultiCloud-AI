@@ -1215,24 +1215,29 @@ npm install
 
 ---
 
->**NOTE:** We are copy and pasting for simplicity's sake, but in the real-world this would not but the best practice, there are many other ways to do this.
+>**NOTE:** I copy/paste for simplicity's sake, but in the real-world this would not but the best practice, there are many other ways to do this.
 
 ---
    
-   - Create a zip file of the entire directory:
-        
-        zip -r dynamodb_to_bigquery.zip .
-        
-    - This zip file will be used when creating or updating the Lambda function.
-    - Return to the root directory of your project:
-        
-        cd ../..
-        
+### I created a zip file of the entire directory:
+```        
+zip -r dynamodb_to_bigquery.zip .
 ```
 
 ---
 
->**NOTE:** Remember to never commit the `google_credentials.json` file to version control. It should be added to your `.gitignore` file.
+>**NOTE:** This zip file will be used when creating or updating the Lambda function.
+
+---
+
+### I returned to the root directory of the project:
+``` 
+cd ../..
+```
+
+---
+
+>**WARNING:** In the real world never commit the `google_credentials.json` file to version control. It should be added to your `.gitignore` file.
 
 ---
 
