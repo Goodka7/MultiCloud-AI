@@ -418,6 +418,8 @@ spec:
 
 ### I set up a GitHub repository so I can use it for a CI/CD pipeline to the front-end
 
+<img src="https://github.com/user-attachments/assets/aa85b7ca-de78-4353-b552-d5e544af5c36" width="500">
+
 ### I named the repository "cloudmart", then in the EC2 CLI:
 
 ```
@@ -434,9 +436,8 @@ git push -u origin main
 
 <img src="https://github.com/user-attachments/assets/6ae9dfe9-a235-46e9-8fe8-29104c350a8b" width="300">
 
-Use the token in the password field.
-![image](https://github.com/user-attachments/assets/f9e7ad8a-f98c-49ab-9501-8a44579a9f4a)
-![image](https://github.com/user-attachments/assets/aa85b7ca-de78-4353-b552-d5e544af5c36)
+### I used the token in the password field
+<img src="https://github.com/user-attachments/assets/f9e7ad8a-f98c-49ab-9501-8a44579a9f4a" width="800">
 
 Add git files to the repository.
 
