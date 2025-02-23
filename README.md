@@ -12,8 +12,8 @@
   - [Kubernetes Setup](#kubernetes-setup)
   - [EKS Setup](#eks-setup)
   - [ECR Setup](#ecr-setup)
-    - [STAGE 2: Wrap up](#stage-2---wrap-up)
-- [Usage](#usage)
+  - [STAGE 2: Wrap up](#stage-2---wrap-up)
+- [STAGE 3: Pipeline (Automation) Setup](#stage-3---pipeline-(automation)-setup)
 - [Troubleshooting](#troubleshooting)
 
 
@@ -446,7 +446,7 @@ spec:
 
 ---
 
-# STAGE 3 - Pipeline Automation Setup
+# STAGE 3 - Pipeline (Automation) Setup
 
 ---
 
