@@ -904,7 +904,7 @@ Select the Lambda function `cloudmart-list-products` as the action group executo
 In the `Action group schema` section, choose `Define via in-line schema editor`.
 ```
 
-I paste the OpenAPI schema below into the schema editor:
+### I paste the OpenAPI schema below into the schema editor:
 
 ```
 {
