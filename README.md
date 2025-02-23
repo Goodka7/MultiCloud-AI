@@ -28,7 +28,7 @@
   - [BigQuery Setup](#bigquery-setup)
   - [Azuer Language Setup](#azure-language-setup)
   - [STAGE 5: Wrap-Up](#stage-5---wrap-up)
-
+- [Lessons Learned](#lessons-learned)
 ---
 
 ## Overview:
@@ -68,7 +68,7 @@ Each stage contributes to building a robust, automated system that supports prod
 | **Containerization**  | Docker, Kubernetes, EKS, ECR                                                         |
 | **Infrastructure**    | Terraform, AWS IAM, kubectl, eksctl, AWS ES2 CLI                                     |
 | **CI/CD**             | GitHub, GitHub Actions, CodePipeline                                                |
-| **Scripting**         | Bash, Node.js, Git, Shell                                                            |
+| **Scripting**         | Bash, Node.js, Git, Shell, Markdown, HTML                                            |
 | **AI & ML**           | Bedrock AI, OpenAI GPT-4, Azure Language API (Sentiment Analysis)                    |
 | **Databases**         | DynamoDB, BigQuery                                                                   |
 | **Security**          | IAM Roles, AWS Lambda Permissions                                                   |
@@ -1614,6 +1614,31 @@ kubectl apply -f cloudmart-backend.yaml
 
 ### I was able to get all 3 sentiments that the Azure Language API gives
 <img src="https://github.com/user-attachments/assets/062a2012-e499-470d-8fbb-52c7e20c09c1" width="500">
+
+[Back to the top](#table-of-contents)
+---
+
+## Lessons Learned
+
+1. **Importance of Clear Documentation**: Documenting every step of the process, including configuration settings, command-line inputs, and troubleshooting steps, proved to be essential for future reference and troubleshooting. This helped ensure consistency and clarity across all stages of the project.
+
+2. **Automation and Infrastructure as Code**: The use of tools like Terraform and CodePipeline for automating infrastructure deployment and CI/CD processes significantly reduced manual errors and improved efficiency. It’s clear that adopting an Infrastructure as Code (IaC) approach helps with scalability and ensures reproducibility across environments.
+
+3. **Containerization and Kubernetes**: Docker and Kubernetes enabled efficient containerization of both front-end and back-end services, streamlining the development and deployment process. However, ensuring proper configuration of Kubernetes (such as IAM roles and service accounts) was crucial to the success of this setup.
+
+4. **Cloud Platform Flexibility**: Leveraging multiple cloud platforms, including AWS, Google Cloud, and Azure, showcased the flexibility that different cloud services bring to a project. Each platform offered unique tools and services, such as BigQuery and Azure Language API, which enhanced the overall system’s capabilities.
+
+5. **AI Integration**: Implementing AI tools like OpenAI and Bedrock for customer support and product recommendations demonstrated the power of machine learning models in real-world applications. Integrating these services required careful attention to API permissions and role management to ensure smooth functionality.
+
+6. **Security Best Practices**: Proper configuration of IAM roles and policies was critical in securing the infrastructure and ensuring that the right permissions were granted to the right services. The principle of "Least Privilege" was reinforced as essential to minimize security risks.
+
+7. **Continuous Improvement of Deployment Pipelines**: The creation and refinement of a CI/CD pipeline using GitHub Actions and CodePipeline highlighted the importance of automating the build, test, and deployment process. This not only improved deployment speed but also ensured that updates were consistent and reliable.
+
+8. **Scalability Considerations**: Building with scalability in mind—particularly through the use of cloud resources like DynamoDB, Kubernetes, and ECR—ensured that the system could handle future growth without significant rework.
+
+9. **Markdown Practice**: Writing the report provided an opportunity to practice Markdown, improving both my technical writing and formatting skills.
+
+10. **Problem Solving**: The source material I was using to create this lab was outdated, with some services no longer available and drastic changes to GUIs. I had to leverage Google and ChatGPT to find workarounds for these issues. Despite these challenges, I was able to build a working product that functioned exactly as the source material intended.
 
 [Back to the top](#table-of-contents)
 ---
