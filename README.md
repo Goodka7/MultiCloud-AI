@@ -27,6 +27,7 @@
   - [Azuer Language Setup](#azure-language-setup)
   - [STAGE 5: Wrap up](#stage-5---wrap-up)
 
+---
 
 ### Overview:
 
@@ -56,7 +57,7 @@ This project involves setting up a comprehensive system to manage an e-commerce 
 
 Each stage contributes to building a robust, automated system that supports product recommendations, customer inquiries, and backend infrastructure management. The goal is to provide a scalable and efficient environment for CloudMart’s operations, with integrated AI for enhanced user experience and sentiment analysis.
 
-
+---
 
 # STAGE 1 - Foundational Services Setup
 
