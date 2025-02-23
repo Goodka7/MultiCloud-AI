@@ -28,14 +28,37 @@
   - [STAGE 5: Wrap up](#stage-5---wrap-up)
 
 
+### Overview:
+
+This project involves setting up a comprehensive system to manage an e-commerce platform, **CloudMart**, using multiple cloud services, containerization, automation, and AI integration. The setup is divided into several stages, each focused on different infrastructure and application components.
+
+1. **Foundational Services Setup**:
+   - **AWS Virtual Machine Setup**: Provisioning an EC2 instance for hosting the platform.
+   - **Terraform Setup**: Automating infrastructure setup with Terraform, including provisioning S3 buckets and DynamoDB tables.
+   - **DynamoDB Setup**: Automating the creation and management of DynamoDB tables for data storage.
+
+2. **Containers Setup**:
+   - **Docker Setup**: Setting up containerized environments for both back-end and front-end services.
+   - **Kubernetes Setup**: Configuring Kubernetes clusters and integrating them with EKS for managing the containers.
+   - **ECR Setup**: Storing Docker images in Amazon ECR and using Kubernetes to manage deployments.
+
+3. **Pipeline (Automation) Setup**:
+   - **GitHub Setup**: Setting up GitHub repositories for source control.
+   - **CodePipeline Setup**: Automating the build and deployment process using AWS CodePipeline to integrate continuous delivery.
+
+4. **AI Assistant Setup**:
+   - **Lambda Setup**: Implementing AWS Lambda functions for processing tasks such as listing products.
+   - **Bedrock Agent and OpenAI Setup**: Integrating AI assistants to handle product recommendations and customer support using Bedrock and OpenAI models.
+
+5. **MultiCloud Setup**:
+   - **BigQuery Setup**: Setting up Google Cloud BigQuery for data analytics and integrating it with AWS Lambda to transfer data.
+   - **Azure Language Setup**: Configuring sentiment analysis on customer support tickets using Azure’s Language API.
+
+Each stage contributes to building a robust, automated system that supports product recommendations, customer inquiries, and backend infrastructure management. The goal is to provide a scalable and efficient environment for CloudMart’s operations, with integrated AI for enhanced user experience and sentiment analysis.
+
+
 
 # STAGE 1 - Foundational Services Setup
-
----
-
->**SUMMARY:**
-
----
 
 ## AWS Virtual Machine Setup
 
@@ -115,12 +138,6 @@ resource "aws_s3_bucket" "my_bucket" {
 ---
 
 # STAGE 2 - Containers Setup
-
----
-
->**SUMMARY:**
-
----
 
 ## Docker Setup
 
@@ -458,12 +475,6 @@ spec:
 
 # STAGE 3 - Pipeline (Automation) Setup
 
----
-
->**SUMMARY:**
-
----
-
 ## GitHub Setup 
 
 ### I set up a GitHub repository so I can use it for a CI/CD pipeline to the front-end
@@ -747,12 +758,6 @@ git push
 ---
 
 # STAGE 4 - AI Assistant Setup
-
----
-
->**SUMMARY:**
-
----
 
 ## Lambda Setup
 
@@ -1137,10 +1142,6 @@ Here we have two functioning AI bots that are capable of handling customer queri
 ---
 
 # STAGE 5 - MultiCloud Setup
-
----
-
->**SUMMARY:**
 
 ---
 
