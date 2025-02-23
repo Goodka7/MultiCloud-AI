@@ -536,6 +536,7 @@ git commit -m "app sent to repo"
 
 ### Finally I manually checked the repository to see if the push went through
 <img src="https://github.com/user-attachments/assets/6ac42db8-6fe1-42b7-a1fc-3204e6505e8b" width="800">
+
 [Back to the top](#table-of-contents)
 ---
 
@@ -753,6 +754,7 @@ git push
 ```
 
 <img src="https://github.com/user-attachments/assets/fb1b3711-bba5-424c-9b7f-c3865c2a8009" width="800">
+
 [Back to the top](#table-of-contents)
 ---
 ## STAGE 3 - Wrap-Up
@@ -777,6 +779,7 @@ git push
 
 ### After:
 <img src="https://github.com/user-attachments/assets/978b2dfb-fa4e-4d17-bc94-1da504fd0fc7" width="800">
+
 [Back to the top](#table-of-contents)
 ---
 
@@ -1147,6 +1150,7 @@ nano cloudmart-backend.yaml
 ### Then I pushed the appended `.yaml` into the environment
 
 <img src="https://github.com/user-attachments/assets/9b7f0054-803c-4e81-94d5-c2178de5df35" width="500">
+
 [Back to the top](#table-of-contents)
 ---
 ## Stage 4 - Wrap-Up
@@ -1165,6 +1169,7 @@ Here we have two functioning AI bots that are capable of handling customer queri
 <img src="https://github.com/user-attachments/assets/829fa8b3-20bf-4b2f-b0ed-90e5b83b5297" width="600">
 <img src="https://github.com/user-attachments/assets/008347bc-2576-4dc9-9bd9-a7f5d704c762" width="600">
 <img src="https://github.com/user-attachments/assets/74958021-b027-4808-af82-aa7a418235d9" width="600">
+
 [Back to the top](#table-of-contents)
 ---
 
