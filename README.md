@@ -650,7 +650,7 @@ phases:
 
 ---
 
->**NOTE:**This build script allows for the kubernetes to search the imagedefinitions.json file to find the current imageUri, then then change the value of the Uri variable inside cloudmart-frontend.yaml
+>**NOTE:** This build script allows for the kubernetes to search the imagedefinitions.json file to find the current imageUri, then then change the value of the Uri variable inside cloudmart-frontend.yaml
 
 ---
 
