@@ -1,6 +1,6 @@
-<img src="https://github.com/user-attachments/assets/c584d492-45a7-4964-b7ea-c9d7e13eba49" width="500" />
-<br></br>
-<img src="https://github.com/user-attachments/assets/23065407-8251-467c-b7dd-17e617b8832f" width="500" />
+<p align="center"><img src="https://github.com/user-attachments/assets/c584d492-45a7-4964-b7ea-c9d7e13eba49" width="500" />
+<br>
+<img src="https://github.com/user-attachments/assets/23065407-8251-467c-b7dd-17e617b8832f" width="500" /></p>
 
 # Table of Contents
 - [STAGE 1: Foundational Services Set Up](#stage-1---foundational-services-setup)
