@@ -595,14 +595,28 @@ Click "add action group".
 ```
 <img src="https://github.com/user-attachments/assets/97523f5e-2ab3-49e2-93d4-77bdb5307497" width="500">
 
+```
 Once all this information is entered, click "Create project"
-Title the project: cloudmartDeployToProduction
-Scroll down to image and make sure amazonlinux-x86_64-standard:4.0 is selected.
-We will create two Enviromental Variables: AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY so we can authenticate to the Kubernetes cluster.
-You will need to enter the access key values for the eksuser that we created earlier, however you can create new keys if you lost them.
-![image](https://github.com/user-attachments/assets/53deaeb5-2bd8-462d-bd1f-a5e8dfee8393)
+Title the project: `cloudmartDeployToProduction`
+Scroll down to image and make sure `amazonlinux-x86_64-standard:4.0` is selected.
+```
+### I created two Enviromental Variables: `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` so I can authenticate to the Kubernetes cluster.
 
-//---> Normally you would not do this in a production environment as it doesn't follow security best practices.
+### I entered the access key values for the eksuser that I created earlier
+
+---
+
+>**NOTE:** You can create new keys if you lost them.
+
+---
+
+<img src="https://github.com/user-attachments/assets/53deaeb5-2bd8-462d-bd1f-a5e8dfee8393" width="500">
+
+---
+
+>**NOTE:** Normally you would not do this in a production environment as it doesn't follow security best practices.
+
+---
 
 Scroll down to build spec and click "switch to Editor":
 
