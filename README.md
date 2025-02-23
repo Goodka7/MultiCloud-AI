@@ -852,14 +852,23 @@ Scroll up and click "Save and Exit"
 Scroll down on the cloudmart-product-recommendation-agent overview
 ```
 
-![image](https://github.com/user-attachments/assets/94947079-53f3-4428-b560-67a2ff5559fc)
+<img src="https://github.com/user-attachments/assets/94947079-53f3-4428-b560-67a2ff5559fc" width="300">
 
+```
 Click the link to open in a NEW TAB.
-We are going to add a permission so the Agent can use the Lambda function.
 Click "Add permissions".
 Select "Create inline policy".
-Select "json" at the top and add the following script:
+```
 
+---
+
+>**NOTE:**This step adds a permission so the "agent" can use the Lambda function.
+
+---
+
+### I selected "json" at the top and add the following script:
+
+```
 {
   "Version": "2012-10-17",
   "Statement": [
@@ -875,20 +884,27 @@ Select "json" at the top and add the following script:
     }
   ]
 }
-
+```
+```
 Click "Next".
 Name the policy `BedrockAgentLambdaAccess`.
 Click "Create policy".
-![image](https://github.com/user-attachments/assets/6f07ef5d-dfe4-4e56-b67a-2c5971a310a1)
+```
 
-Time to add an Action Group.
+<img src="https://github.com/user-attachments/assets/6f07ef5d-dfe4-4e56-b67a-2c5971a310a1" width="800">
+
+### Next I added an Action Group:
+
+```
 Going back to the Amazon Bedrock screen, click `Edit in Agent Builder`.
 Scroll down to the Action Group section and click `Add`.
 Set the Action Group name to `Get-Product-Recommendations`.
 Set the action group type as `Define with API schemas`.
 Select the Lambda function `cloudmart-list-products` as the action group executor.
 In the `Action group schema` section, choose `Define via in-line schema editor`.
-Paste the OpenAPI schema below into the schema editor:
+```
+
+I paste the OpenAPI schema below into the schema editor:
 
 ```
 {
@@ -970,6 +986,7 @@ Paste the OpenAPI schema below into the schema editor:
     }
 }
 ```
+
 Click on `Prepare Agent` to finalize the creation.
 
 Test the Agent
