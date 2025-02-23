@@ -30,9 +30,8 @@
 ### Next, I launched the EC2 Instance to make use of the CLI
 
 <img src="https://github.com/user-attachments/assets/1c208424-1f25-4ebf-ae0b-770db497a741" width="800" />
-
----
 [Back to the top](#table-of-contents)
+---
 
 ## Terraform Setup
 
@@ -83,6 +82,7 @@ resource "aws_s3_bucket" "my_bucket" {
 
 ---
 [Back to the top](#table-of-contents)
+---
 
 ## DynamoDB Setup
 
