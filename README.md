@@ -994,7 +994,7 @@ Click on `Prepare Agent` to finalize the creation.
 ### I ran a small test on the agent on the right
 <img src="https://github.com/user-attachments/assets/b56a9082-ba28-48c6-8e62-1b593cdf4edf" width="300">
 
-### I then created an allias for the agent:
+### I then created an alias for the agent:
 
 ```
 On the agent details page, go to the `Aliases` section.
@@ -1036,12 +1036,11 @@ cd ../..
 cd challenge-day2/backend
 ```
 
-Now we will append the cloudmart-backend.yaml file to allow our AI access.
-We will be giving the placeholder values actual values from both our AI Agent and AI Assistant.
-
+### Next I appended the `cloudmart-backend.yaml` file to allow our AI access:
+```
 nano cloudmart-backend.yaml
-
-
+```
+```
         - name: BEDROCK_AGENT_ID
           value: "xxxx"
         - name: BEDROCK_AGENT_ALIAS_ID
@@ -1050,33 +1049,39 @@ nano cloudmart-backend.yaml
           value: "xxxx"
         - name: OPENAI_ASSISTANT_ID
           value: "xxxx"
-          
-![image](https://github.com/user-attachments/assets/5f8afd54-14f9-4cfa-9b9d-8d5f7d2c6c37)
-
-We find this info on the OpenAI assistant page as well as the Bedrock agent page.
-
-Now we need to push the appended .yaml into the environment
-
-![image](https://github.com/user-attachments/assets/9b7f0054-803c-4e81-94d5-c2178de5df35)
-
-### Test the AI
-
-Bedrock AI Agent:
-![image](https://github.com/user-attachments/assets/6830d70e-cab9-436f-8a40-a5e5c49973bf)
-
-Open AI Assistant:
-![image](https://github.com/user-attachments/assets/0899df3b-569c-44c9-9f3b-397abb3e65f1)
-
-Here we have two functioning AI bots that are capable of handling customer queries and even cancel orders:
-
-![image](https://github.com/user-attachments/assets/7db8b10a-891d-424a-a87d-299c57f69f83)
-![image](https://github.com/user-attachments/assets/829fa8b3-20bf-4b2f-b0ed-90e5b83b5297)
-![image](https://github.com/user-attachments/assets/008347bc-2576-4dc9-9bd9-a7f5d704c762)
-![image](https://github.com/user-attachments/assets/74958021-b027-4808-af82-aa7a418235d9)
+```          
+<img src="https://github.com/user-attachments/assets/5f8afd54-14f9-4cfa-9b9d-8d5f7d2c6c37" width="500">
 
 ---
 
-#STAGE #5 - MultiCloud Setup
+>**NOTE:** This info is on the OpenAI assistant page as well as the Bedrock agent page.
+
+---
+
+### Then I pushed the appended `.yaml` into the environment
+
+<img src="https://github.com/user-attachments/assets/9b7f0054-803c-4e81-94d5-c2178de5df35" width="500">
+
+## Stage 4 Wrap Up
+
+### I tested the agents in the Web Facing API
+
+### Bedrock AI Agent:
+<img src="https://github.com/user-attachments/assets/6830d70e-cab9-436f-8a40-a5e5c49973bf" width="300">
+
+Open AI Assistant:
+<img src="https://github.com/user-attachments/assets/0899df3b-569c-44c9-9f3b-397abb3e65f1" width="300">
+
+Here we have two functioning AI bots that are capable of handling customer queries and even cancel orders:
+
+<img src="https://github.com/user-attachments/assets/7db8b10a-891d-424a-a87d-299c57f69f83" width="500">
+<img src="https://github.com/user-attachments/assets/829fa8b3-20bf-4b2f-b0ed-90e5b83b5297" width="500">
+<img src="https://github.com/user-attachments/assets/008347bc-2576-4dc9-9bd9-a7f5d704c762" width="500">
+<img src="https://github.com/user-attachments/assets/74958021-b027-4808-af82-aa7a418235d9" width="500">
+
+---
+
+# STAGE 5 - MultiCloud Setup
 
 ---
 
@@ -1084,7 +1089,7 @@ Here we have two functioning AI bots that are capable of handling customer queri
 
 ---
 
->**NOTE:** The next few steps are a quick way to create a backup and clear the folders out so we can move forward, in the real-world we would do this much differently.
+>**NOTE:** The next few steps are a quick way to create a backup and clear the folders out to move forward, in the real-world I would do this much differently.
 
 ---
 
@@ -1098,13 +1103,13 @@ cp -R terraform-project/ terraform-project_bkp
 
 ### I cleaned up the existing application files except the `Dockerfile` and the `.yaml` file (Backend):
 
-```shell
+```
 cd challenge-day2/backend
 rm -rf $(find . -mindepth 1 -maxdepth 1 -not \( -name ".*" -o -name Dockerfile -o -name "*.yaml" \))
 ```
 <img src="https://github.com/user-attachments/assets/b9183530-22da-48db-8b5f-6413f2e7c523" width="300">
 
-### I downloaded the updated source code and unziped it (Backend)
+### I downloaded the updated source code and unziped it (Backend):
 
 ```
 wget  https://tcb-public-events.s3.amazonaws.com/mdac/resources/final/cloudmart-backend-final.zip
@@ -1114,14 +1119,14 @@ unzip cloudmart-backend-final.zip
 
 ### I cleaned up the existing application files except the `Dockerfile` and the `.yaml` file (Frontend):
 
-```shell
+```
 cd ../..
 cd challenge-day2/frontend
 rm -rf $(find . -mindepth 1 -maxdepth 1 -not \( -name ".*" -o -name Dockerfile -o -name "*.yaml" \))
 ```
 <img src="https://github.com/user-attachments/assets/cc9e2359-723e-44bb-a6db-1f5218369634" width="300">
 
-### I downloaded the updated source code and unziped it (Frontend)
+### I downloaded the updated source code and unziped it (Frontend):
 
 ```
 wget  https://tcb-public-events.s3.amazonaws.com/mdac/resources/final/cloudmart-frontend-final.zip
@@ -1129,7 +1134,7 @@ unzip cloudmart-frontend-final.zip
 ```
 <img src="https://github.com/user-attachments/assets/11cc3198-9a22-42b8-9e95-e76df134b216" width="800">
 
-### I used the CI/CD pipeline to push the updates
+### I used the CI/CD pipeline to push the updates to the front end:
 
 ```
 git add -A
@@ -1138,61 +1143,83 @@ git push
 ```
 <img src="https://github.com/user-attachments/assets/4f85a39a-1916-400a-bbce-c228bdcf0ac2" width="800">
 
-## Google Cloud BigQuery Setup
+## BigQuery Setup
 
 ### I followed these steps to set up Google Cloud BigQuery for CloudMart:
 
 ```
-1. Create a Google Cloud Project:
-    - Go to the Google Cloud Console (https://console.cloud.google.com/).
-    - Click on the project dropdown and select "New Project".
-    - Name the project "CloudMart" and click "create".
-2. Enable BigQuery API:
-    - In the Google Cloud Console (the hamburger menu on the top left of the dashboard).
-    - Click "APIS & SERVICES" to open the dashboard.
-    - Click "+ ENABLE APIS AND SERVICES" at the top.
-    - Search for "BigQuery API" and enable it.
-3. Create a BigQuery Dataset:
-    - In the Google Cloud Console, go to "BigQuery".
-    - In the Explorer pane, click on your project name.
-    - Click the menu on the right.
-    - Click "Create dataset".
-    - Set the Dataset ID to "cloudmart".
-    - Click "Create dataset".
-4. Create a BigQuery Table:
-    - In the dataset you just created, click the menu on the right.
-    - Click "Create table".
-    - Set the Table name to "cloudmart-orders".
-    - Define the schema according to your order structure. For example:
-        - id: STRING
-        - items: JSON
-        - userEmail: STRING
-        - total: FLOAT
-        - status: STRING
-        - createdAt: TIMESTAMP
-    - Click "Create table".
-5. Create Service Account and Key:
-    - In the Google Cloud Console, go to "IAM & Admin" > "Service Accounts".
-    - Click "Create service account".
-    - Name it "cloudmart-bigquery-sa" and click "Create and Continue"
-    - Grant it the "BigQuery Data Editor" role.
-    - After creating, click on the service account, go to the "Keys" tab, and click "ADD KEY" > "Create new key".
-    - Choose JSON as the key type and create.
-    - Save the downloaded JSON file as `google_credentials.json`.
-6. Configure Lambda Function:
-    - Navigate to the root directory of your project.
-    - Enter the Lambda function directory:
-        
-        cd challenge-day2/backend/src/lambda/addToBigQuery
-        
-    - Install the required dependencies:
-        
-        sudo yum install npm
-        npm install
+Create a Google Cloud Project:
+Go to the Google Cloud Console (https://console.cloud.google.com/).
+Click on the project dropdown and select "New Project".
+Name the project "CloudMart" and click "create".
+```
+```
+Enable BigQuery API:
+In the Google Cloud Console (the hamburger menu on the top left of the dashboard).
+Click "APIS & SERVICES" to open the dashboard.
+Click "+ ENABLE APIS AND SERVICES" at the top.
+Search for "BigQuery API" and enable it.
+```
+```
+Create a BigQuery Dataset:
+In the Google Cloud Console, go to "BigQuery".
+In the Explorer pane, click on your project name.
+Click the menu on the right.
+Click "Create dataset".
+Set the Dataset ID to "cloudmart".
+Click "Create dataset".
+```
+```
+Create a BigQuery Table:
+In the dataset you just created, click the menu on the right.
+Click "Create table".
+Set the Table name to "cloudmart-orders".
+Define the schema according to your order structure. For example:
+  - id: STRING
+  - items: JSON
+  - userEmail: STRING
+  - total: FLOAT
+  - status: STRING
+  - createdAt: TIMESTAMP
+Click "Create table".
+```
+```
+Create Service Account and Key:
+In the Google Cloud Console, go to "IAM & Admin" > "Service Accounts".
+Click "Create service account".
+Name it "cloudmart-bigquery-sa" and click "Create and Continue"
+Grant it the "BigQuery Data Editor" role.
+After creating, click on the service account, go to the "Keys" tab, and click "ADD KEY" > "Create new key".
+Choose JSON as the key type and create.
+Save the downloaded JSON file as `google_credentials.json`.
+```
+
+## Configure Lambda Function:
+
+### I navigated to the root directory of my project.
+```
+cd ../..
+```
+
+### Next I entered the Lambda function directory:
+ ```       
+ cd challenge-day2/backend/src/lambda/addToBigQuery
+ ```       
+### After that I installed the required dependencies:
+```        
+sudo yum install npm
+npm install
+```
                 
-    - Edit the `google_credentials.json` file in this directory and place the content of your key.
-**NOTE:** We are copy and pasting for simplicity's sake, but in the real-world this would not but the best practice, there are many other ways to do this.
-    - Create a zip file of the entire directory:
+### Then I edited the `google_credentials.json` file in this directory and placed the content of my key.
+
+---
+
+>**NOTE:** We are copy and pasting for simplicity's sake, but in the real-world this would not but the best practice, there are many other ways to do this.
+
+---
+   
+   - Create a zip file of the entire directory:
         
         zip -r dynamodb_to_bigquery.zip .
         
