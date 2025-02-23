@@ -697,16 +697,21 @@ git push
 
 ---
 
-## STAGE 4 - AI Assistant Setup
+# STAGE 4 - AI Assistant Setup
 
-First lets copy the products.zip into the Terraform folder
+## Lambda Setup
 
+### First I copied the `products.zip` into the `terraform-project` folder
+
+```
 cd challenge-day2/backend/src/lambda
 cp list_products.zip ../../../../terraform-project/
 cd ../../../../terraform-project
+```
 
-Next we will append the main.tf:
+### Next I appended the `main.tf` to add:
 
+```
 # IAM Role for Lambda function
 resource "aws_iam_role" "lambda_role" {
   name = "cloudmart_lambda_role"
@@ -780,23 +785,40 @@ resource "aws_lambda_permission" "allow_bedrock" {
 output "list_products_function_arn" {
   value = aws_lambda_function.list_products.arn
 }
+```
 
-This script creates an IAM role and policy for a Lambda function, the Lambda function itself (which lists products from DynamoDB), permissions for Bedrock to invoke the function, and outputs the ARN of the Lambda function.
+---
 
-terraform apply in order to push changes.
-![image](https://github.com/user-attachments/assets/743c2081-d185-47fb-affc-68557a25fff9)
+>**NOTE:** This script creates an IAM role and policy for a Lambda function, the Lambda function itself (which lists products from DynamoDB), permissions for Bedrock to invoke the function, and outputs the ARN of the Lambda function.
 
-Setup Amazon Bedrock
-\\---> We will be using the Claude 3 Sonnet verison even though its considered a legacy, this is because the set up is very easy.
-You must request the agent, you can do so by searching the list for the agent you wish to use.
-![image](https://github.com/user-attachments/assets/7a7ef9fa-b296-45dc-9bbf-6baefaa04bf0)
+---
 
-Select "Agent" under "Builder Tools" on the left side of the screen.
+### I used `terraform apply` in order to push changes
+
+<img src="https://github.com/user-attachments/assets/743c2081-d185-47fb-affc-68557a25fff9" width="500">
+
+## AWS Bedrock Setup
+
+---
+
+>**NOTE:** I will be using the Claude 3 Sonnet verison even though its considered a `legacy`, this is because the set up is very easy.
+
+---
+
+### I requested the agent, by searching the list for the agent `Claude 3 Sonnet`
+
+<img src="https://github.com/user-attachments/assets/7a7ef9fa-b296-45dc-9bbf-6baefaa04bf0" width="500">
+
+### Under "Builder Tools" on the left side of the screen, I selected "Agent":
+
+```
 Click "Create Agent".
-![image](https://github.com/user-attachments/assets/f0205cd9-192c-46d4-af26-dde9a1fffe38)
+```
+<img src="https://github.com/user-attachments/assets/f0205cd9-192c-46d4-af26-dde9a1fffe38" width="800">
 
-Insert the following for Agent Instructions:
+### I inserted the following for Agent Instructions:
 
+```
 You are a product recommendations agent for CloudMart, an online e-commerce store. Your role is to assist customers in finding products that best suit their needs. Follow these instructions carefully:
 
 1. Begin each interaction by retrieving the full list of products from the API. This will inform you of the available products and their details.
@@ -824,9 +846,11 @@ You are a product recommendations agent for CloudMart, an online e-commerce stor
 12. If a user is looking for a specific type of product, use the 'name' parameter to search for relevant items, but be aware that this may not capture all categories or types of products.
 
 Remember, your primary goal is to help users find the best products for their needs from what's available in our store. Be helpful, informative, and always base your recommendations on the actual product data provided by the API.
-
+```
+```
 Scroll up and click "Save and Exit"
 Scroll down on the cloudmart-product-recommendation-agent overview
+```
 
 ![image](https://github.com/user-attachments/assets/94947079-53f3-4428-b560-67a2ff5559fc)
 
