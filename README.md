@@ -6,6 +6,7 @@
 - [STAGE 1: Foundational Services Set Up](#stage-1---foundational-services-setup)
   - [AWS Virtual Machine Setup](#aws-virtual-machine-setup)
   - [Terraform Setup](#terraform-setup)
+  - [DynamoDB Setup](#dynamodb-setup)
 - [Setup](#setup)
 - [Usage](#usage)
 - [Troubleshooting](#troubleshooting)
@@ -95,6 +96,7 @@ resource "aws_s3_bucket" "my_bucket" {
 
 <img src="https://github.com/user-attachments/assets/1fa6b58c-7a64-412a-a469-f6f5da42939d" width="800" />
 
+[Back to the top](#table-of-contents)
 ---
 
 # STAGE 2 - Docker Setup
