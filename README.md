@@ -472,7 +472,7 @@ Use the GitHub repository `cloudmart` as the source
 
 ---
 
->**NOTE:** Normally you would choose the GitHub (GitHub App) authetication, but because this is a lab we are going to use OAUTH for simplicity.
+>**NOTE:** Normally I would choose the GitHub (GitHub App) authetication, but because this is a lab I am going to use OAUTH for simplicity.
 
 ---
 
@@ -561,6 +561,7 @@ artifacts:
 
 ```
 Click "Create Pipeline"
+Click "Add permissions"
 Set permission `AmazonElasticContainerRegistryPublicFullAccess` for role created by the pipeline process, in IAM.
 
 ```
@@ -599,14 +600,14 @@ Click "add action group".
 Once all this information is entered, click "Create project"
 Title the project: `cloudmartDeployToProduction`
 Scroll down to image and make sure `amazonlinux-x86_64-standard:4.0` is selected.
+Created two Enviromental Variables: `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` 
 ```
-### I created two Enviromental Variables: `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` so I can authenticate to the Kubernetes cluster.
 
-### I entered the access key values for the eksuser that I created earlier
+### I entered the access key values for the `eksuser` that I created earlier
 
 ---
 
->**NOTE:** You can create new keys if you lost them.
+>**NOTE:** These two variables will be used to authenticate to Kubernetes. You can create new keys if you lost them.
 
 ---
 
@@ -614,12 +615,17 @@ Scroll down to image and make sure `amazonlinux-x86_64-standard:4.0` is selected
 
 ---
 
->**NOTE:** Normally you would not do this in a production environment as it doesn't follow security best practices.
+>**NOTE:** Normally you would not manually do this in a production environment as it doesn't follow security best practices.
 
 ---
 
+```
 Scroll down to build spec and click "switch to Editor":
+```
 
+### I entered the following script:
+
+```
 version: 0.2
 
 phases:
@@ -640,49 +646,60 @@ phases:
       - echo $IMAGE_URI
       - sed -i "s|CONTAINER_IMAGE|$IMAGE_URI|g" cloudmart-frontend.yaml
       - kubectl apply -f cloudmart-frontend.yaml
+```
 
-This build script allows for the kubernetes to search the imagedefinitions.json file to find the current imageUri, then then change the value of the Uri variable inside cloudmart-frontend.yaml
-However, we currently have the value hard coded and do not have a variable in place.
+---
 
+>**NOTE:**This build script allows for the kubernetes to search the imagedefinitions.json file to find the current imageUri, then then change the value of the Uri variable inside cloudmart-frontend.yaml
+
+---
+
+### Next, I changed the value hard coded value in the `.yaml` and placed a variable:
+
+```
 nano cloudmart-frontend.yaml
+```
 
-Change the hardcoded value to CONTAINER_IMAGE.
-![image](https://github.com/user-attachments/assets/3ee566f1-28fe-4e97-a438-69b4a3446ab1)
+<img src="https://github.com/user-attachments/assets/3ee566f1-28fe-4e97-a438-69b4a3446ab1" width="500">
 
-Commit and push changes.
+### After that I commit and push changes
 
+```
 git add -A
 git commit -m "replaced image uri with CONTAINER_IMAGE"
 git push
+```
 
-![image](https://github.com/user-attachments/assets/fb1b3711-bba5-424c-9b7f-c3865c2a8009)
+<img src="https://github.com/user-attachments/assets/fb1b3711-bba5-424c-9b7f-c3865c2a8009" width="800">
 
-### Test the CI/CD Pipeline
+### Finally, I test the CI/CD Pipeline:
 
-Make a Change on GitHub:
-Update the application code in the `cloudmart` repository.
-Append file `src/components/MainPage/index.jsx` line 93 to say "Featured Products on Cloudmart" 
-![image](https://github.com/user-attachments/assets/ea5c6a6b-2c7c-445f-b799-c33c1812f905)
-![image](https://github.com/user-attachments/assets/c7573990-708a-4c31-b734-c6f33e26f6bd)
+```
+In the CLI, using nano, append file `src/components/MainPage/index.jsx` line 93 to say "Featured Products on Cloudmart" 
+```
 
-Before:
-![image](https://github.com/user-attachments/assets/6932516a-1e2b-49cb-9f65-2e65d624de27)
+<img src="https://github.com/user-attachments/assets/ea5c6a6b-2c7c-445f-b799-c33c1812f905" width="500">
+<img src="https://github.com/user-attachments/assets/c7573990-708a-4c31-b734-c6f33e26f6bd" width="500">
 
-Commit and push the changes.
-    
+### Before:
+<img src="https://github.com/user-attachments/assets/6932516a-1e2b-49cb-9f65-2e65d624de27" width="800">
+
+### Now I commit and push the changes
+
+```
   git add -A
   git commit -m "changed to Featured Products on CloudMart"
   git push
+```
 
-![image](https://github.com/user-attachments/assets/c66256f6-3a55-459c-a7f8-123f744e4ad6)
+<img src="https://github.com/user-attachments/assets/c66256f6-3a55-459c-a7f8-123f744e4ad6" width="500">
 
-After:
-![image](https://github.com/user-attachments/assets/978b2dfb-fa4e-4d17-bc94-1da504fd0fc7)
+### After:
+<img src="https://github.com/user-attachments/assets/978b2dfb-fa4e-4d17-bc94-1da504fd0fc7" width="800">
 
-We can see that the pipeline is working as the change was accepted.
+---
 
-
-PART 3
+## STAGE 3 - AI Assistant Setup
 
 First lets copy the products.zip into the Terraform folder
 
