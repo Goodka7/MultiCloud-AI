@@ -3,7 +3,7 @@
 <img src="https://github.com/user-attachments/assets/23065407-8251-467c-b7dd-17e617b8832f" width="500" /></p>
 
 # Table of Contents
-- [STAGE 1: Foundational Services Set Up](#stage-1---foundational-services-setup)
+- [STAGE 1: Foundational Services Setup](#stage-1---foundational-services-setup)
   - [AWS Virtual Machine Setup](#aws-virtual-machine-setup)
   - [Terraform Setup](#terraform-setup)
   - [DynamoDB Setup](#dynamodb-setup)
@@ -14,8 +14,18 @@
   - [ECR Setup](#ecr-setup)
   - [STAGE 2: Wrap up](#stage-2---wrap-up)
 - [STAGE 3: Pipeline (Automation) Setup](#stage-3---pipeline-automation-setup)
-- [Troubleshooting](#troubleshooting)
-
+  - [GitHub Setup](#github-setup)
+  - [CodePipeline Setup](#codepipeline-setup)
+  - [STAGE 3: Wrap up](#stage-3---wrap-up)
+- [STAGE 4: AI Assistant Setup](#stage-4---ai-assistant-setup)
+  - [Lambda Setup](#lambda-setup)
+  - [Bedrock Agent Setup](#bedrock-agent-setup)
+  - [OpenAI Agent Setup](#openai-agent-setup)
+  - [STAGE 4: Wrap up](#stage-4---wrap-up)
+- [STAGE 5: MultiCloud Setup](#stage-5---multicloud-setup)
+  - [BigQuery Setup](#bigquery-setup)
+  - [Azuer Language Setup](#azure-language-setup)
+  - [STAGE 5: Wrap up](#stage-5---wrap-up)
 
 
 
