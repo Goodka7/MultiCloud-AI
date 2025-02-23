@@ -458,7 +458,7 @@ git commit -m "app sent to repo"
 
 ### Access AWS CodePipeline
 
-### Start the 'Create pipeline' process
+### Start the 'Create pipeline' process:
 
 ```
 Name: `cloudmart-cicd-pipeline`
@@ -469,31 +469,48 @@ Use the GitHub repository `cloudmart` as the source
 
 ---
 
->**NOTE:** Normally you would choose the GitHub (GitHub App) authetication, but because this is a lab we are going to use OAUTH.
+>**NOTE:** Normally you would choose the GitHub (GitHub App) authetication, but because this is a lab we are going to use OAUTH for simplicity.
 
 ---
 
-Use the GitHub Branch `main` as the source.
+```
+Use the GitHub Branch `main` as the source
 
 Set build provider to "Other build providers" and select `AWSCodeBuild`
 Make sure `SourceArtifact` is set for Input Artifact
-![image](https://github.com/user-attachments/assets/93dc4d91-02c1-48f1-b083-8b0b8b8ec3c4)
+```
 
+<img src="https://github.com/user-attachments/assets/93dc4d91-02c1-48f1-b083-8b0b8b8ec3c4" width="500">
 
+```
 Click "Create Project"
+Give the project the name `cloudmartBuild`.
+Select `amazonlinux-x86_64-standard:4.0` as the Image.
+```
 
-Give the project the name cloudmartBuild.
-Select amazonlinux-x86_64-standard:4.0 as the Image.
-![image](https://github.com/user-attachments/assets/588c0023-4ad2-454d-9fe6-5b046e5208f2)
+<img src="https://github.com/user-attachments/assets/588c0023-4ad2-454d-9fe6-5b046e5208f2" width="500">
 
+```
 Configure the environment to support Docker builds by checking "Enable this flag if you want to build Docker images or want your builds to get elevated privileges"
-![image](https://github.com/user-attachments/assets/5e015e61-dc48-4e0c-be58-860a490f528a)
+```
 
-Add the environment variable **ECR_REPO** with the ECR front end repository URI. //---> Do NOT use :latest as this will give you an error.
-![image](https://github.com/user-attachments/assets/0bb21ca3-2033-400c-a431-b5f2ecf7d65b)
+<img src="https://github.com/user-attachments/assets/5e015e61-dc48-4e0c-be58-860a490f528a" width="500">
+
+```
+Add the environment variable **ECR_REPO** with the ECR front end repository URI.
+```
+
+---
+
+>**NOTE:** Do NOT use :latest as this will give you an error.
+
+---
+
+<img src="https://github.com/user-attachments/assets/0bb21ca3-2033-400c-a431-b5f2ecf7d65b" width="500">
 
 For the build specification:
 
+```
 version: 0.2
 phases:
   install:
@@ -521,6 +538,7 @@ phases:
       - printf '[{\"name\":\"cloudmart-app\",\"imageUri\":\"%s\"}]' $REPOSITORY_URI:$imageTag > imagedefinitions.json
       - cat imagedefinitions.json
       - ls -l
+```
 
 env:
   exported-variables: ["imageTag"]
