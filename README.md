@@ -662,7 +662,7 @@ nano cloudmart-frontend.yaml
 
 <img src="https://github.com/user-attachments/assets/3ee566f1-28fe-4e97-a438-69b4a3446ab1" width="500">
 
-### After that I commit and push changes
+### After that I commit and push changes:
 
 ```
 git add -A
@@ -672,11 +672,9 @@ git push
 
 <img src="https://github.com/user-attachments/assets/fb1b3711-bba5-424c-9b7f-c3865c2a8009" width="800">
 
-### Finally, I test the CI/CD Pipeline:
+## Stage 3 Wrap Up
 
-```
-In the CLI, using nano, append file `src/components/MainPage/index.jsx` line 93 to say "Featured Products on Cloudmart" 
-```
+### In the CLI, using nano, I append the file `src/components/MainPage/index.jsx` line 93 to say "Featured Products on Cloudmart" 
 
 <img src="https://github.com/user-attachments/assets/ea5c6a6b-2c7c-445f-b799-c33c1812f905" width="500">
 <img src="https://github.com/user-attachments/assets/c7573990-708a-4c31-b734-c6f33e26f6bd" width="500">
@@ -684,7 +682,7 @@ In the CLI, using nano, append file `src/components/MainPage/index.jsx` line 93 
 ### Before:
 <img src="https://github.com/user-attachments/assets/6932516a-1e2b-49cb-9f65-2e65d624de27" width="800">
 
-### Now I commit and push the changes
+### Now I commit and push the changes:
 
 ```
   git add -A
@@ -699,7 +697,7 @@ In the CLI, using nano, append file `src/components/MainPage/index.jsx` line 93 
 
 ---
 
-## STAGE 3 - AI Assistant Setup
+## STAGE 4 - AI Assistant Setup
 
 First lets copy the products.zip into the Terraform folder
 
