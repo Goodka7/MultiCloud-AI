@@ -1508,6 +1508,7 @@ terraform apply
 ```
 
 <img src="https://github.com/user-attachments/assets/b2f78c50-5d93-4e97-b8f6-492c153b2c5d" width="800">
+
 [Back to the top](#table-of-contents)
 ---
 
