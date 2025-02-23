@@ -491,6 +491,7 @@ spec:
 ### Here I have a working API that I can add products to
 <img src="https://github.com/user-attachments/assets/6e0c72df-f7e3-422c-b627-8696f624b7ec" width="800" />
 <img src="https://github.com/user-attachments/assets/ce839899-bbb4-4d03-bb95-d87ef736accb" width="800" />
+
 [Back to the top](#table-of-contents)
 ---
 
@@ -878,6 +879,7 @@ output "list_products_function_arn" {
 ### I used `terraform apply` in order to push changes
 
 <img src="https://github.com/user-attachments/assets/743c2081-d185-47fb-affc-68557a25fff9" width="500">
+
 [Back to the top](#table-of-contents)
 ---
 ## Bedrock Agent Setup
