@@ -29,7 +29,7 @@
 
 ---
 
-### Overview:
+## Overview:
 
 This project involves setting up a comprehensive system to manage an e-commerce platform, **CloudMart**, using multiple cloud services, containerization, automation, and AI integration. The setup is divided into several stages, each focused on different infrastructure and application components.
 
@@ -56,6 +56,22 @@ This project involves setting up a comprehensive system to manage an e-commerce 
    - **Azure Language Setup**: Configuring sentiment analysis on customer support tickets using Azure’s Language API.
 
 Each stage contributes to building a robust, automated system that supports product recommendations, customer inquiries, and backend infrastructure management. The goal is to provide a scalable and efficient environment for CloudMart’s operations, with integrated AI for enhanced user experience and sentiment analysis.
+
+---
+## Techniques/Languages/Technologies Used
+
+| **Category**          | **Technologies/Tools**                                                      |
+|-----------------------|------------------------------------------------------------------------------|
+| **Cloud Providers**    | AWS (EC2, S3, DynamoDB, EKS, Lambda, CodePipeline, ECR), Google Cloud (BigQuery), Azure |
+| **Containerization**   | Docker, Kubernetes, EKS, ECR                                                  |
+| **Automation**         | Terraform, GitHub, CodePipeline                                               |
+| **Scripting Languages**| Bash, Node.js, Shell                                                          |
+| **Infrastructure**     | AWS IAM, AWS CLI, kubectl                                                     |
+| **CI/CD**              | GitHub Actions, AWS CodePipeline                                              |
+| **AI & Machine Learning**| Bedrock AI, OpenAI GPT-4, Azure Language API (Sentiment Analysis)           |
+| **Databases**          | DynamoDB, BigQuery                                                            |
+| **Development Tools**  | Git, GitHub, Visual Studio Code, Nano                                         |
+| **Security**           | IAM Roles, AWS Lambda Permissions                                             |
 
 ---
 
