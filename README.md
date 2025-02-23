@@ -797,7 +797,7 @@ output "list_products_function_arn" {
 
 <img src="https://github.com/user-attachments/assets/743c2081-d185-47fb-affc-68557a25fff9" width="500">
 
-## AWS Bedrock Setup
+## Bedrock Agent Setup
 
 ---
 
@@ -987,42 +987,54 @@ In the `Action group schema` section, choose `Define via in-line schema editor`.
 }
 ```
 
+```
 Click on `Prepare Agent` to finalize the creation.
+```
 
-Test the Agent
-![image](https://github.com/user-attachments/assets/b56a9082-ba28-48c6-8e62-1b593cdf4edf)
+### I ran a small test on the agent on the right
+<img src="https://github.com/user-attachments/assets/b56a9082-ba28-48c6-8e62-1b593cdf4edf" width="300">
 
+### I then created an allias for the agent:
+
+```
 On the agent details page, go to the `Aliases` section.
 Click on `Create alias`.
 Name the alias `cloudmart-prod`.
 Select the most recent version of the agent.
 Click on `Create alias` to finalize.
+```
 
-##Setup OpenAI Agent
+## OpenAI Agent Setup
 
+```
 Access the OpenAI platform (https://platform.openai.com/).
 Log in.
 Navigate to the "Assistants" section.
 Click on "Create New Assistant".
 Name the assistant "CloudMart Customer Support".
 Select the model `gpt-4o`.
-In the "Instructions" section, paste the following:
+```
 
-```Text
+### I pasted the following in the "Instructions" section:
+
+```
 You are a customer support agent for CloudMart, an e-commerce platform. Your role is to assist customers with general inquiries, order issues, and provide helpful information about using the CloudMart platform. You don't have direct access to specific product or inventory information. Always be polite, patient, and focus on providing excellent customer service. If a customer asks about specific products or inventory, politely explain that you don't have access to that information and suggest they check the website or speak with a sales representative.
 ```
 
+```
 Enable "Code Interpreter" so that the assistant is able to help with technical aspects of using the platform.
-Note down the Assistant ID: `asst_LmaOL5srxUrfGXS6WALgSmwO`
-
+Note down the Assistant ID
 Go to the API Keys section in your OpenAI account.
 Generate a new API key.
-Copy this key, you'll need it for your environment variables.
+Copy this key, for the environment variables.
+```
 
-Switching back to the EC2 instance we need to change directories.
+### I switched back to the EC2 instance and changed directories:
 
+```
 cd ../..
 cd challenge-day2/backend
+```
 
 Now we will append the cloudmart-backend.yaml file to allow our AI access.
 We will be giving the placeholder values actual values from both our AI Agent and AI Assistant.
