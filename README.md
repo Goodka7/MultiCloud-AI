@@ -58,20 +58,19 @@ This project involves setting up a comprehensive system to manage an e-commerce 
 Each stage contributes to building a robust, automated system that supports product recommendations, customer inquiries, and backend infrastructure management. The goal is to provide a scalable and efficient environment for CloudMart’s operations, with integrated AI for enhanced user experience and sentiment analysis.
 
 ---
-## Techniques/Languages/Technologies Used
+## Technologies and Tools Used
 
-| **Category**          | **Technologies/Tools**                                                      |
-|-----------------------|------------------------------------------------------------------------------|
-| **Cloud Providers**    | AWS (EC2, S3, DynamoDB, EKS, Lambda, CodePipeline, ECR), Google Cloud (BigQuery), Azure |
-| **Containerization**   | Docker, Kubernetes, EKS, ECR                                                  |
-| **Automation**         | Terraform, GitHub, CodePipeline                                               |
-| **Scripting Languages**| Bash, Node.js, Shell                                                          |
-| **Infrastructure**     | AWS IAM, AWS CLI, kubectl                                                     |
-| **CI/CD**              | GitHub Actions, AWS CodePipeline                                              |
-| **AI & Machine Learning**| Bedrock AI, OpenAI GPT-4, Azure Language API (Sentiment Analysis)           |
-| **Databases**          | DynamoDB, BigQuery                                                            |
-| **Development Tools**  | Git, GitHub, Visual Studio Code, Nano                                         |
-| **Security**           | IAM Roles, AWS Lambda Permissions                                             |
+| **Type**             | **Tools/Technologies**                                                               |
+|----------------------|--------------------------------------------------------------------------------------|
+| **Cloud Platforms**   | AWS (EC2, S3, DynamoDB, EKS, Lambda, CodePipeline, ECR), Google Cloud (BigQuery), Azure (Language)|
+| **Containerization**  | Docker, Kubernetes, EKS, ECR                                                         |
+| **Infrastructure**    | Terraform, AWS IAM, kubectl, AWS CLI                                                |
+| **CI/CD**             | GitHub, GitHub Actions, CodePipeline                                                |
+| **Scripting**         | Bash, Node.js, Git, Shell                                                            |
+| **AI & ML**           | Bedrock AI, OpenAI GPT-4, Azure Language API (Sentiment Analysis)                    |
+| **Databases**         | DynamoDB, BigQuery                                                                   |
+| **Security**          | IAM Roles, AWS Lambda Permissions                                                   |
+| **Dev Tools**         | Visual Studio Code, Nano, Git                                                       |
 
 ---
 
