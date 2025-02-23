@@ -439,17 +439,22 @@ git push -u origin main
 ### I used the token in the password field
 <img src="https://github.com/user-attachments/assets/f9e7ad8a-f98c-49ab-9501-8a44579a9f4a" width="800">
 
-Add git files to the repository.
+### I used `git add` and `git commit` to create the files for the repository
 
+```
 git add -A
 git commit -m "app sent to repo"
-![image](https://github.com/user-attachments/assets/4ab3478b-7e7c-474c-9fbf-fc3f11548c5d)
+```
 
-git push
-![image](https://github.com/user-attachments/assets/856ef0a9-ee39-43cf-ab33-a7c035b64b62)
-![image](https://github.com/user-attachments/assets/6ac42db8-6fe1-42b7-a1fc-3204e6505e8b)
+<img src="https://github.com/user-attachments/assets/4ab3478b-7e7c-474c-9fbf-fc3f11548c5d" width="800">
 
-Create the Codepipeline
+### Next I used `git push` to push it through in to the repository
+<img src="https://github.com/user-attachments/assets/856ef0a9-ee39-43cf-ab33-a7c035b64b62" width="800">
+
+### Finally I manually checked the repository to see if the push went through
+<img src="https://github.com/user-attachments/assets/6ac42db8-6fe1-42b7-a1fc-3204e6505e8b" width="800">
+
+## CodePipeline Setup
 
 Access AWS CodePipeline.
 Start the 'Create pipeline' process.
