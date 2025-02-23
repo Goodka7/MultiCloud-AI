@@ -402,7 +402,7 @@ spec:
 
 ---
 
-## Stage 2 - Wrap Up
+## STAGE 2 - Wrap Up
 
 ### I decided to check the Web facing API to see what I have so far
 <img src="https://github.com/user-attachments/assets/a2714e7f-2b52-43af-ac44-2297a308ceb2" width="800" />
@@ -672,7 +672,7 @@ git push
 
 <img src="https://github.com/user-attachments/assets/fb1b3711-bba5-424c-9b7f-c3865c2a8009" width="800">
 
-## Stage 3 Wrap Up
+## STAGE 3 - Wrap Up
 
 ### In the CLI, using nano, I append the file `src/components/MainPage/index.jsx` line 93 to say "Featured Products on Cloudmart" 
 
@@ -1062,7 +1062,7 @@ nano cloudmart-backend.yaml
 
 <img src="https://github.com/user-attachments/assets/9b7f0054-803c-4e81-94d5-c2178de5df35" width="500">
 
-## Stage 4 Wrap Up
+## Stage 4 - Wrap Up
 
 ### I tested the agents in the Web Facing API
 
@@ -1143,6 +1143,8 @@ git push
 ```
 <img src="https://github.com/user-attachments/assets/4f85a39a-1916-400a-bbce-c228bdcf0ac2" width="800">
 
+---
+
 ## BigQuery Setup
 
 ### I followed these steps to set up Google Cloud BigQuery for CloudMart:
@@ -1194,7 +1196,9 @@ Choose JSON as the key type and create.
 Save the downloaded JSON file as `google_credentials.json`.
 ```
 
-## Configure Lambda Function:
+---
+
+## Configure Lambda Function
 
 ### I navigated to the root directory of my project.
 ```
@@ -1241,18 +1245,18 @@ cd ../..
 
 ---
 
-### Next I updated Lambda Function Environmental Variables:
+### Next I updated Lambda Function Environmental Variables
 
 ## Terraform Steps
 
-### First I deleted the main.tf
+### First I deleted the `main.tf`
 
 ```
 cd terraform-project
 rm main.tf
 ```
 
-### Next I recreated the file using nano
+### Next I recreated the file using `nano`
 
 ```
 nano main.tf
@@ -1409,7 +1413,7 @@ resource "aws_lambda_event_source_mapping" "dynamodb_stream" {
 }
 ```
 
-### Apply the changes using `terraform apply`
+### Apply the changes using `terraform apply`:
 
 ```
 terraform apply
@@ -1424,22 +1428,28 @@ terraform apply
 ### I followed these steps to set up Azure Language for sentiment analysis:
 
 ```
-1. Create an Azure Account:
-    - Go to the Azure portal (https://portal.azure.com/).
-    - Sign in or create a new account if you don't have one.
-2. Create a Resource:
-    - In the Azure portal, click "Create a resource".
-    - Search for "Language" and select it.
-3. Configure the Resource:
-    - Choose your subscription and resource group (create a new one if needed).
-    - Name the resource (e.g., "cloudmart-text-analytics").
-    - Choose your region and pricing tier.
-    - Name your instance (e.g., "cloud-instance")
-    - Click "Review + create", then "Create".
-4. Get the Endpoint and Key:
-    - Once the resource is created, go to its overview page.
-    - In the left menu, under "Resource Management", click "Keys and Endpoint".
-    - Copy the endpoint URL and one of the keys.
+Create an Azure Account:
+Go to the Azure portal (https://portal.azure.com/).
+Sign in or create a new account if you don't have one.
+```
+```
+Create a Resource:
+In the Azure portal, click "Create a resource".
+Search for "Language" and select it.
+```
+```
+Configure the Resource:
+Choose your subscription and resource group (create a new one if needed).
+Name the resource (e.g., "cloudmart-text-analytics").
+Choose your region and pricing tier.
+Name your instance (e.g., "cloud-instance")
+Click "Review + create", then "Create".
+```
+```
+Get the Endpoint and Key:
+Once the resource is created, go to its overview page.
+In the left menu, under "Resource Management", click "Keys and Endpoint".
+Copy the endpoint URL and one of the keys.
 ```
 
 ---
@@ -1453,7 +1463,7 @@ cd ..
 cd backend
 ```
 
-### Next I opened the cloudmart-backend.yaml to append it:
+### Next I opened the `cloudmart-backend.yaml` to append it:
 
 ```
         - name: AZURE_ENDPOINT
@@ -1478,32 +1488,37 @@ cd backend
 ```
 kubectl apply -f cloudmart-backend.yaml
 ```
-## Wrap Up
+## STAGE 5 - Wrap Up
 
-Create new order
-![image](https://github.com/user-attachments/assets/a12ae9f6-8851-48ec-b793-f00a27ee3a22)
+### First I created a new order
+<img src="https://github.com/user-attachments/assets/a12ae9f6-8851-48ec-b793-f00a27ee3a22" width="300">
 
-Confirm order in cart
-![image](https://github.com/user-attachments/assets/ae744ae9-66c6-42f6-a8d4-9def2f662ee4)
+### Next I confirmed the order is in cart
+<img src="https://github.com/user-attachments/assets/ae744ae9-66c6-42f6-a8d4-9def2f662ee4" width="500">
 
-Confirm order placement
-![image](https://github.com/user-attachments/assets/9b84c25f-ddae-461d-ad41-6bf6ff231a6a)
+### Then I placed the order
+<img src="https://github.com/user-attachments/assets/9b84c25f-ddae-461d-ad41-6bf6ff231a6a" width="400">
 
-View confirmation
-![image](https://github.com/user-attachments/assets/6cfee2a9-3417-4963-8161-7a3bb4e72589)
+### After that I viewed confirmation
+<img src="https://github.com/user-attachments/assets/6cfee2a9-3417-4963-8161-7a3bb4e72589" width="500">
 
-Good look in BigQuery to see if the data was collected
-![image](https://github.com/user-attachments/assets/42ef2630-0bfa-4e12-9a8c-94f46c6d2b6d)
-this confirms the lambda function and the stream are working.
+### I went to Google Cloud to look in BigQuery to see if the data was collected
+<img src="https://github.com/user-attachments/assets/42ef2630-0bfa-4e12-9a8c-94f46c6d2b6d" width="500">
 
-Made a conversation that was very negative
-![image](https://github.com/user-attachments/assets/725a0d47-ec8b-43cb-ad55-74a293475a6c)
+---
 
-Viewing the tickets the API connected to Azure and gave it a sentiment using the language API
-![image](https://github.com/user-attachments/assets/3f6a513b-0587-433f-ad8c-62a4c836911e)
+>**NOTE:** This confirms the lambda function and the stream are working.
 
-Made a very positive conversation
-![image](https://github.com/user-attachments/assets/57b078ab-62e4-46e3-95d3-e91e740a97a5)
+---
 
-Viewing the tickets the API connected to Azure and gave it a sentiment using the language API
-![image](https://github.com/user-attachments/assets/062a2012-e499-470d-8fbb-52c7e20c09c1)
+### Next I made a conversation in the support tab that was very negative
+<img src="https://github.com/user-attachments/assets/725a0d47-ec8b-43cb-ad55-74a293475a6c" width="500">
+
+### I then viewed the `/tickets` to see if the Azure Language API was assigning a `sentiment` 
+<img src="https://github.com/user-attachments/assets/3f6a513b-0587-433f-ad8c-62a4c836911e" width="500">
+
+### I followed up with a very positive conversation to further verify the Azure Language implementation
+<img src="https://github.com/user-attachments/assets/57b078ab-62e4-46e3-95d3-e91e740a97a5" width="500">
+
+### I was able to get all 3 sentiments that the Azure Language API gives
+<img src="https://github.com/user-attachments/assets/062a2012-e499-470d-8fbb-52c7e20c09c1" width="500">
