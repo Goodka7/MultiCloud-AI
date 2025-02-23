@@ -88,7 +88,7 @@ Each stage contributes to building a robust, automated system that supports prod
 
 <img src="https://github.com/user-attachments/assets/1c208424-1f25-4ebf-ae0b-770db497a741" width="800" />
 
-<a href="#table-of-contents" style="font-size:10px;">Back to the top</a>
+[Back to the top](#table-of-contents)
 ---
 
 ## Terraform Setup
@@ -1616,3 +1616,4 @@ kubectl apply -f cloudmart-backend.yaml
 <img src="https://github.com/user-attachments/assets/062a2012-e499-470d-8fbb-52c7e20c09c1" width="500">
 
 [Back to the top](#table-of-contents)
+---
