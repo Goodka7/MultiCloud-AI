@@ -246,7 +246,7 @@ cd backend
 <img src="https://github.com/user-attachments/assets/9e7c6485-77d1-4cd6-a51b-6754e5d8c465" width="800" />
 <img src="https://github.com/user-attachments/assets/fb9d651d-82b9-4c2b-bb43-9222c2410595" width="800" />
 
-### I created a Kubernetes deployment file for the Backend
+### I created a Kubernetes deployment file for the back end
 
 `nano cloudmart-backend.yaml`
 
@@ -300,7 +300,7 @@ spec:
       
 ---
 
->**NOTE:** I changed the "image:" line to the ":latest" URI Image from the ECR instance I created.
+>**NOTE:** I changed the "image:" line to the ":latest" URI Image from the ECR instance I created. This can be found by clicking on the backend image in ECR and clicking "copy URI". 
 
 ---
 
@@ -389,7 +389,7 @@ spec:
 
 ---
 
->**NOTE:** I changed the "image:" line to the ":latest" URI Image from the ECR instance I created.
+>**NOTE:** I changed the "image:" line to the ":latest" URI Image from the ECR instance I created. This can be found by clicking on the frontend image in ECR and clicking "copy URI".
 
 ---
 
@@ -401,7 +401,7 @@ spec:
 
 ---
 
-## Wrap Up
+## Stage 2 - Wrap Up
 
 ### I decided to check the Web facing API to see what I have so far
 <img src="https://github.com/user-attachments/assets/a2714e7f-2b52-43af-ac44-2297a308ceb2" width="800" />
