@@ -456,13 +456,23 @@ git commit -m "app sent to repo"
 
 ## CodePipeline Setup
 
-Access AWS CodePipeline.
-Start the 'Create pipeline' process.
-Name: `cloudmart-cicd-pipeline`
-Use the GitHub repository `cloudmart` as the source.
-![image](https://github.com/user-attachments/assets/1aaaca58-98bb-4fdf-80f0-750c92373937)
+### Access AWS CodePipeline
 
-//--> Normally you would choose the GitHub (GitHub App) authetication, but because this is a lab we are going to use OAUTH.
+### Start the 'Create pipeline' process
+
+```
+Name: `cloudmart-cicd-pipeline`
+Use the GitHub repository `cloudmart` as the source
+```
+
+<img src="https://github.com/user-attachments/assets/1aaaca58-98bb-4fdf-80f0-750c92373937" width="500">
+
+---
+
+>**NOTE:** Normally you would choose the GitHub (GitHub App) authetication, but because this is a lab we are going to use OAUTH.
+
+---
+
 Use the GitHub Branch `main` as the source.
 
 Set build provider to "Other build providers" and select `AWSCodeBuild`
