@@ -3,6 +3,8 @@
 <img src="https://github.com/user-attachments/assets/23065407-8251-467c-b7dd-17e617b8832f" width="500" /></p>
 
 # Table of Contents
+- [Overview](#overview)
+- [Technologies and Tools Leveraged](#technologies-and-tolls-leveraged)
 - [STAGE 1: Foundational Services Setup](#stage-1---foundational-services-setup)
   - [AWS Virtual Machine Setup](#aws-virtual-machine-setup)
   - [Terraform Setup](#terraform-setup)
