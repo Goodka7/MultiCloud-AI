@@ -88,7 +88,7 @@ Each stage contributes to building a robust, automated system that supports prod
 
 <img src="https://github.com/user-attachments/assets/1c208424-1f25-4ebf-ae0b-770db497a741" width="800" />
 
-[Back to the top](#table-of-contents)
+<a href="#table-of-contents" style="font-size:14px;">Back to the top</a>
 ---
 
 ## Terraform Setup
