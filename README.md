@@ -414,10 +414,13 @@ spec:
 
 # STAGE 3 - Pipeline Automation Setup
 
-###Create a GitHub repository so we can use it for a CI/CD pipeline to the Multicloud Enviroment.
+## GitHub Setup 
 
-Created a public repository on github called "cloudmart", then in the CLI:
+### I set up a GitHub repository so I can use it for a CI/CD pipeline to the front-end
 
+### I named the repository "cloudmart", then in the EC2 CLI:
+
+```
 echo "# cloudmart" >> README.md
 git init
 git add README.md
@@ -425,9 +428,11 @@ git commit -m "first commit"
 git branch -M main
 git remote add origin https://github.com/Goodka7/cloudmart.git
 git push -u origin main
+```
 
-Generate a password token on GitHub for the last step and use that token for the password to push the origin.
-![image](https://github.com/user-attachments/assets/6ae9dfe9-a235-46e9-8fe8-29104c350a8b)
+### I generated a password token on GitHub for the `origin main` step of the script above
+
+<img src="https://github.com/user-attachments/assets/6ae9dfe9-a235-46e9-8fe8-29104c350a8b" width="800">
 
 Use the token in the password field.
 ![image](https://github.com/user-attachments/assets/f9e7ad8a-f98c-49ab-9501-8a44579a9f4a)
