@@ -3,7 +3,7 @@
 <img src="https://github.com/user-attachments/assets/23065407-8251-467c-b7dd-17e617b8832f" width="500" />
 
 # Table of Contents
-- [STAGE 1: Foundational Services Set Up](#STAGE1)
+[STAGE 1: Foundational Services Set Up](#stage-1---foundational-services-setup)
       -[AWS Virtual Machine Setup](##AWSVirtualMachineSetup)
 - [Setup](#setup)
 - [Usage](#usage)
