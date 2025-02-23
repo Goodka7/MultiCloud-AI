@@ -4,7 +4,7 @@
 
 # Table of Contents
 [STAGE 1: Foundational Services Set Up](#stage-1---foundational-services-setup)<br>
-            [AWS Virtual Machine Setup](#aws-virtual-machine-setup)
+                                                            -[AWS Virtual Machine Setup](#aws-virtual-machine-setup)
 - [Setup](#setup)
 - [Usage](#usage)
 - [Troubleshooting](#troubleshooting)
