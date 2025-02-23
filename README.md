@@ -64,7 +64,7 @@ Each stage contributes to building a robust, automated system that supports prod
 |----------------------|--------------------------------------------------------------------------------------|
 | **Cloud Platforms**   | AWS (EC2, S3, DynamoDB, EKS, Lambda, CodePipeline, ECR), Google Cloud (BigQuery), Azure (Language)|
 | **Containerization**  | Docker, Kubernetes, EKS, ECR                                                         |
-| **Infrastructure**    | Terraform, AWS IAM, kubectl, AWS CLI                                                |
+| **Infrastructure**    | Terraform, AWS IAM, kubectl, eksctl, AWS ES2 CLI                                     |
 | **CI/CD**             | GitHub, GitHub Actions, CodePipeline                                                |
 | **Scripting**         | Bash, Node.js, Git, Shell                                                            |
 | **AI & ML**           | Bedrock AI, OpenAI GPT-4, Azure Language API (Sentiment Analysis)                    |
