@@ -220,6 +220,7 @@ CMD ["serve", "-s", ".", "-l", "5001"]
 
 <img src="https://github.com/user-attachments/assets/d5ae877d-0ca1-4552-a3dc-b1ad39589e49" width="500" />
 
+[Back to the top](#table-of-contents)
 ---
 
 ## Kubernetes Setup
@@ -259,7 +260,7 @@ I then copied the secret access key and pasted it into the CLI
 Entered the region: us-west-2
 Kept the default output format by clicking enter.
 ```
-
+[Back to the top](#table-of-contents)
 ---
 
 ## EKS Setup
@@ -296,7 +297,8 @@ eksctl create cluster \
 >**NOTE:** I gave the service account admin privileges for simplicity, however, in a real-world application you would follow the "Least Privilege/Zero Trust" model.
 
 ---
-
+[Back to the top](#table-of-contents)
+---
 ## ECR Setup
 
 ### I created an ECR Repository for the backened to "dock" the Docker Image
@@ -477,7 +479,7 @@ spec:
 
 ### I used the CLI to verify the services are running
 <img src="https://github.com/user-attachments/assets/d162aac9-c885-4304-84ca-b7ecc14eea29" width="800" />
-
+[Back to the top](#table-of-contents)
 ---
 
 ## STAGE 2 - Wrap-Up
@@ -488,7 +490,7 @@ spec:
 ### Here I have a working API that I can add products to
 <img src="https://github.com/user-attachments/assets/6e0c72df-f7e3-422c-b627-8696f624b7ec" width="800" />
 <img src="https://github.com/user-attachments/assets/ce839899-bbb4-4d03-bb95-d87ef736accb" width="800" />
-
+[Back to the top](#table-of-contents)
 ---
 
 # STAGE 3 - Pipeline (Automation) Setup
@@ -532,7 +534,7 @@ git commit -m "app sent to repo"
 
 ### Finally I manually checked the repository to see if the push went through
 <img src="https://github.com/user-attachments/assets/6ac42db8-6fe1-42b7-a1fc-3204e6505e8b" width="800">
-
+[Back to the top](#table-of-contents)
 ---
 
 ## CodePipeline Setup
@@ -749,7 +751,8 @@ git push
 ```
 
 <img src="https://github.com/user-attachments/assets/fb1b3711-bba5-424c-9b7f-c3865c2a8009" width="800">
-
+[Back to the top](#table-of-contents)
+---
 ## STAGE 3 - Wrap-Up
 
 ### In the CLI, using nano, I append the file `src/components/MainPage/index.jsx` line 93 to say "Featured Products on Cloudmart" 
@@ -772,7 +775,7 @@ git push
 
 ### After:
 <img src="https://github.com/user-attachments/assets/978b2dfb-fa4e-4d17-bc94-1da504fd0fc7" width="800">
-
+[Back to the top](#table-of-contents)
 ---
 
 # STAGE 4 - AI Assistant Setup
@@ -874,7 +877,8 @@ output "list_products_function_arn" {
 ### I used `terraform apply` in order to push changes
 
 <img src="https://github.com/user-attachments/assets/743c2081-d185-47fb-affc-68557a25fff9" width="500">
-
+[Back to the top](#table-of-contents)
+---
 ## Bedrock Agent Setup
 
 ---
@@ -1081,7 +1085,8 @@ Name the alias `cloudmart-prod`.
 Select the most recent version of the agent.
 Click on `Create alias` to finalize.
 ```
-
+[Back to the top](#table-of-contents)
+---
 ## OpenAI Agent Setup
 
 ```
@@ -1139,7 +1144,8 @@ nano cloudmart-backend.yaml
 ### Then I pushed the appended `.yaml` into the environment
 
 <img src="https://github.com/user-attachments/assets/9b7f0054-803c-4e81-94d5-c2178de5df35" width="500">
-
+[Back to the top](#table-of-contents)
+---
 ## Stage 4 - Wrap-Up
 
 ### I tested the agents in the Web Facing API
@@ -1156,7 +1162,7 @@ Here we have two functioning AI bots that are capable of handling customer queri
 <img src="https://github.com/user-attachments/assets/829fa8b3-20bf-4b2f-b0ed-90e5b83b5297" width="600">
 <img src="https://github.com/user-attachments/assets/008347bc-2576-4dc9-9bd9-a7f5d704c762" width="600">
 <img src="https://github.com/user-attachments/assets/74958021-b027-4808-af82-aa7a418235d9" width="600">
-
+[Back to the top](#table-of-contents)
 ---
 
 # STAGE 5 - MultiCloud Setup
@@ -1216,7 +1222,7 @@ git commit -m "final code"
 git push 
 ```
 <img src="https://github.com/user-attachments/assets/4f85a39a-1916-400a-bbce-c228bdcf0ac2" width="800">
-
+[Back to the top](#table-of-contents)
 ---
 
 ## BigQuery Setup
@@ -1269,7 +1275,7 @@ After creating, click on the service account, go to the "Keys" tab, and click "A
 Choose JSON as the key type and create.
 Save the downloaded JSON file as `google_credentials.json`.
 ```
-
+[Back to the top](#table-of-contents)
 ---
 
 ## Configure Lambda Function
@@ -1494,7 +1500,7 @@ terraform apply
 ```
 
 <img src="https://github.com/user-attachments/assets/b2f78c50-5d93-4e97-b8f6-492c153b2c5d" width="800">
-
+[Back to the top](#table-of-contents)
 ---
 
 ## Azure Language Setup
@@ -1562,6 +1568,8 @@ cd backend
 ```
 kubectl apply -f cloudmart-backend.yaml
 ```
+[Back to the top](#table-of-contents)
+---
 ## STAGE 5 - Wrap-Up
 
 ### First I created a new order
@@ -1596,3 +1604,4 @@ kubectl apply -f cloudmart-backend.yaml
 
 ### I was able to get all 3 sentiments that the Azure Language API gives
 <img src="https://github.com/user-attachments/assets/062a2012-e499-470d-8fbb-52c7e20c09c1" width="500">
+[Back to the top](#table-of-contents)
