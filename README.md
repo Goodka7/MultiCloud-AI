@@ -4,7 +4,7 @@
 
 # Table of Contents
 - [Overview](#overview)
-- [Technologies and Tools Leveraged](#technologies-and-tolls-leveraged)
+- [Technologies and Tools Leveraged](#technologies-and-tools-leveraged)
 - [STAGE 1: Foundational Services Setup](#stage-1---foundational-services-setup)
   - [AWS Virtual Machine Setup](#aws-virtual-machine-setup)
   - [Terraform Setup](#terraform-setup)
