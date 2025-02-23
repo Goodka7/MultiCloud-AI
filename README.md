@@ -7,7 +7,12 @@
   - [AWS Virtual Machine Setup](#aws-virtual-machine-setup)
   - [Terraform Setup](#terraform-setup)
   - [DynamoDB Setup](#dynamodb-setup)
-- [Setup](#setup)
+- [STAGE 2: Containers Setup](#stage-2---containers-setup)
+  - [Docker Setup](#docker-setup)
+  - [Kubernetes Setup](#kubernetes-setup)
+  - [EKS Setup](#eks-setup)
+  - [ECR Setup](#ecr-setup)
+    - [STAGE 2: Wrap up](#stage-2---wrap-up)
 - [Usage](#usage)
 - [Troubleshooting](#troubleshooting)
 
@@ -99,7 +104,7 @@ resource "aws_s3_bucket" "my_bucket" {
 [Back to the top](#table-of-contents)
 ---
 
-# STAGE 2 - Docker Setup
+# STAGE 2 - Containers Setup
 
 ---
 
