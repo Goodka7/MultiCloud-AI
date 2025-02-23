@@ -2,7 +2,23 @@
 <br></br>
 <img src="https://github.com/user-attachments/assets/23065407-8251-467c-b7dd-17e617b8832f" width="500" />
 
+# Table of Contents
+- [STAGE 1: Foundational Services Set Up](#STAGE1)
+      -[AWS Virtual Machine Setup](##AWSVirtualMachineSetup)
+- [Setup](#setup)
+- [Usage](#usage)
+- [Troubleshooting](#troubleshooting)
+
+
+
+
 # STAGE 1 - Foundational Services Setup
+
+---
+
+>**SUMMARY:**
+
+---
 
 ## AWS Virtual Machine Setup
 
@@ -78,6 +94,12 @@ resource "aws_s3_bucket" "my_bucket" {
 ---
 
 # STAGE 2 - Docker Setup
+
+---
+
+>**SUMMARY:**
+
+---
 
 ## Docker Setup
 
@@ -415,6 +437,12 @@ spec:
 
 # STAGE 3 - Pipeline Automation Setup
 
+---
+
+>**SUMMARY:**
+
+---
+
 ## GitHub Setup 
 
 ### I set up a GitHub repository so I can use it for a CI/CD pipeline to the front-end
@@ -698,6 +726,12 @@ git push
 ---
 
 # STAGE 4 - AI Assistant Setup
+
+---
+
+>**SUMMARY:**
+
+---
 
 ## Lambda Setup
 
