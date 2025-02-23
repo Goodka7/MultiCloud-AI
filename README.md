@@ -13,7 +13,7 @@
   - [EKS Setup](#eks-setup)
   - [ECR Setup](#ecr-setup)
   - [STAGE 2: Wrap up](#stage-2---wrap-up)
-- [STAGE 3: Pipeline (Automation) Setup]([#stage-3---pipeline-automation-setup)
+- [STAGE 3: Pipeline (Automation) Setup](#stage-3---pipeline-automation-setup)
 - [Troubleshooting](#troubleshooting)
 
 
