@@ -12,20 +12,20 @@
   - [Kubernetes Setup](#kubernetes-setup)
   - [EKS Setup](#eks-setup)
   - [ECR Setup](#ecr-setup)
-  - [STAGE 2: Wrap up](#stage-2---wrap-up)
+  - [STAGE 2: Wrap-Up](#stage-2---wrap-up)
 - [STAGE 3: Pipeline (Automation) Setup](#stage-3---pipeline-automation-setup)
   - [GitHub Setup](#github-setup)
   - [CodePipeline Setup](#codepipeline-setup)
-  - [STAGE 3: Wrap up](#stage-3---wrap-up)
+  - [STAGE 3: Wrap-Up](#stage-3---wrap-up)
 - [STAGE 4: AI Assistant Setup](#stage-4---ai-assistant-setup)
   - [Lambda Setup](#lambda-setup)
   - [Bedrock Agent Setup](#bedrock-agent-setup)
   - [OpenAI Agent Setup](#openai-agent-setup)
-  - [STAGE 4: Wrap up](#stage-4---wrap-up)
+  - [STAGE 4: Wrap-Up](#stage-4---wrap-up)
 - [STAGE 5: MultiCloud Setup](#stage-5---multicloud-setup)
   - [BigQuery Setup](#bigquery-setup)
   - [Azuer Language Setup](#azure-language-setup)
-  - [STAGE 5: Wrap up](#stage-5---wrap-up)
+  - [STAGE 5: Wrap-Up](#stage-5---wrap-up)
 
 ---
 
@@ -55,7 +55,7 @@ This project involves setting up a comprehensive system to manage an e-commerce 
    - **BigQuery Setup**: Setting up Google Cloud BigQuery for data analytics and integrating it with AWS Lambda to transfer data.
    - **Azure Language Setup**: Configuring sentiment analysis on customer support tickets using Azure’s Language API.
 
-Each stage contributes to building a robust, automated system that supports product recommendations, customer inquiries, and backend infrastructure management. The goal is to provide a scalable and efficient environment for CloudMart’s operations, with integrated AI for enhanced user experience and sentiment analysis.
+Each stage contributes to building a robust, automated system that supports product recommendations, customer inquiries, and back-end infrastructure management. The goal is to provide a scalable and efficient environment for CloudMart’s operations, with integrated AI for enhanced user experience and sentiment analysis.
 
 ---
 ## Technologies and Tools Leveraged
@@ -310,7 +310,7 @@ eksctl create cluster \
 
 ---
 
-### Next I changed to the backend directory on the CLI
+### Next I changed to the back-end directory on the CLI
 
 ```bash
 cd ..
@@ -323,7 +323,7 @@ cd backend
 <img src="https://github.com/user-attachments/assets/9e7c6485-77d1-4cd6-a51b-6754e5d8c465" width="800" />
 <img src="https://github.com/user-attachments/assets/fb9d651d-82b9-4c2b-bb43-9222c2410595" width="800" />
 
-### I created a Kubernetes deployment file for the back end
+### I created a Kubernetes deployment file for the back-end
 
 `nano cloudmart-backend.yaml`
 
@@ -377,7 +377,7 @@ spec:
       
 ---
 
->**NOTE:** I changed the "image:" line to the ":latest" URI Image from the ECR instance I created. This can be found by clicking on the backend registry in ECR and clicking "copy URI". 
+>**NOTE:** I changed the "image:" line to the ":latest" URI Image from the ECR instance I created. This can be found by clicking on the back-end registry in ECR and clicking "copy URI". 
 
 ---
 
@@ -392,7 +392,7 @@ kubectl apply -f cloudmart-backend.yaml
 ### I monitored the status of objects being created and obtained the public IP generated for the API
 <img src="https://github.com/user-attachments/assets/88c5ff87-814b-43b0-8dcc-0d1c61f90d08" width="800" />
 
-### I changed to the frontend directory to work on the front end:
+### I changed to the front-end directory to work on the front-end:
 
 ```
 cd ..
@@ -412,18 +412,18 @@ nano .env
 VITE_API_BASE_URL=http://<your_url_kubernetes_api>:5000/api
 ```
 
-### After that I created an ECR Repository for the frontend
+### After that I created an ECR Repository for the front-end
 <img src="https://github.com/user-attachments/assets/a3fa488d-6120-4c88-8317-b385d6c107c6" width="800" />
 
 ```
 I named the repository and left all other options as default > Clicked create.
 ```
 
-### I followed the steps for ECR onboarding like I did for the backend
+### I followed the steps for ECR onboarding like I did for the back-end
 <img src="https://github.com/user-attachments/assets/40ff1f55-ea25-40f6-9171-89f1b316c375" width="800" />
 
 
-### I created a Kubernetes deployment file for the Frontend:
+### I created a Kubernetes deployment file for the front-end:
 
 ```
 nano cloudmart-frontend.yaml
@@ -466,7 +466,7 @@ spec:
 
 ---
 
->**NOTE:** I changed the "image:" line to the ":latest" URI Image from the ECR instance I created. This can be found by clicking on the frontend regisitry in ECR and clicking "copy URI".
+>**NOTE:** I changed the "image:" line to the ":latest" URI Image from the ECR instance I created. This can be found by clicking on the front-end regisitry in ECR and clicking "copy URI".
 
 ---
 
@@ -478,7 +478,7 @@ spec:
 
 ---
 
-## STAGE 2 - Wrap Up
+## STAGE 2 - Wrap-Up
 
 ### I decided to check the Web facing API to see what I have so far
 <img src="https://github.com/user-attachments/assets/a2714e7f-2b52-43af-ac44-2297a308ceb2" width="800" />
@@ -576,7 +576,7 @@ Configure the environment to support Docker builds by checking "Enable this flag
 <img src="https://github.com/user-attachments/assets/5e015e61-dc48-4e0c-be58-860a490f528a" width="500">
 
 ```
-Add the environment variable **ECR_REPO** with the ECR front end repository URI.
+Add the environment variable **ECR_REPO** with the ECR front-end repository URI.
 ```
 
 ---
@@ -748,7 +748,7 @@ git push
 
 <img src="https://github.com/user-attachments/assets/fb1b3711-bba5-424c-9b7f-c3865c2a8009" width="800">
 
-## STAGE 3 - Wrap Up
+## STAGE 3 - Wrap-Up
 
 ### In the CLI, using nano, I append the file `src/components/MainPage/index.jsx` line 93 to say "Featured Products on Cloudmart" 
 
@@ -1138,7 +1138,7 @@ nano cloudmart-backend.yaml
 
 <img src="https://github.com/user-attachments/assets/9b7f0054-803c-4e81-94d5-c2178de5df35" width="500">
 
-## Stage 4 - Wrap Up
+## Stage 4 - Wrap-Up
 
 ### I tested the agents in the Web Facing API
 
@@ -1173,7 +1173,7 @@ cp -R challenge-day2/ challenge-day2_bkp
 cp -R terraform-project/ terraform-project_bkp
 ```
 
-### I cleaned up the existing application files except the `Dockerfile` and the `.yaml` file (Backend):
+### I cleaned up the existing application files except the `Dockerfile` and the `.yaml` file (back-end):
 
 ```
 cd challenge-day2/backend
@@ -1181,7 +1181,7 @@ rm -rf $(find . -mindepth 1 -maxdepth 1 -not \( -name ".*" -o -name Dockerfile -
 ```
 <img src="https://github.com/user-attachments/assets/b9183530-22da-48db-8b5f-6413f2e7c523" width="300">
 
-### I downloaded the updated source code and unziped it (Backend):
+### I downloaded the updated source code and unziped it (back-end):
 
 ```
 wget  https://tcb-public-events.s3.amazonaws.com/mdac/resources/final/cloudmart-backend-final.zip
@@ -1189,7 +1189,7 @@ unzip cloudmart-backend-final.zip
 ```
 <img src="https://github.com/user-attachments/assets/07142000-a1f3-4cf4-9856-0211d14433fc" width="500">
 
-### I cleaned up the existing application files except the `Dockerfile` and the `.yaml` file (Frontend):
+### I cleaned up the existing application files except the `Dockerfile` and the `.yaml` file (front-end):
 
 ```
 cd ../..
@@ -1198,7 +1198,7 @@ rm -rf $(find . -mindepth 1 -maxdepth 1 -not \( -name ".*" -o -name Dockerfile -
 ```
 <img src="https://github.com/user-attachments/assets/cc9e2359-723e-44bb-a6db-1f5218369634" width="300">
 
-### I downloaded the updated source code and unziped it (Frontend):
+### I downloaded the updated source code and unziped it (front-end):
 
 ```
 wget  https://tcb-public-events.s3.amazonaws.com/mdac/resources/final/cloudmart-frontend-final.zip
@@ -1206,7 +1206,7 @@ unzip cloudmart-frontend-final.zip
 ```
 <img src="https://github.com/user-attachments/assets/11cc3198-9a22-42b8-9e95-e76df134b216" width="800">
 
-### I used the CI/CD pipeline to push the updates to the front end:
+### I used the CI/CD pipeline to push the updates to the front-end:
 
 ```
 git add -A
@@ -1551,7 +1551,7 @@ cd backend
 
 ---
 
->**NOTE:** Since I only set up the CI/CD pipeline for the frontend, I have to manually do the backend (steps above), ideally you would set up a pipeline for both front and back end.
+>**NOTE:** Since I only set up the CI/CD pipeline for the front-end, I have to manually do the back-end (steps above), ideally you would set up a pipeline for both front and back-end.
 
 ---
 
@@ -1560,7 +1560,7 @@ cd backend
 ```
 kubectl apply -f cloudmart-backend.yaml
 ```
-## STAGE 5 - Wrap Up
+## STAGE 5 - Wrap-Up
 
 ### First I created a new order
 <img src="https://github.com/user-attachments/assets/a12ae9f6-8851-48ec-b793-f00a27ee3a22" width="300">
