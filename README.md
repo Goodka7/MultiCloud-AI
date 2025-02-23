@@ -218,6 +218,7 @@ eksctl create cluster \
 >**NOTE:** I gave the service account admin privileges for simplicity, however, in a real-world application you would follow the "Least Privilege/Zero Trust" model.
 
 ---
+
 ## ECR Setup
 
 ### I created an ECR Repository for the backened to "dock" the Docker Image
@@ -454,6 +455,8 @@ git commit -m "app sent to repo"
 ### Finally I manually checked the repository to see if the push went through
 <img src="https://github.com/user-attachments/assets/6ac42db8-6fe1-42b7-a1fc-3204e6505e8b" width="800">
 
+---
+
 ## CodePipeline Setup
 
 ### Access AWS CodePipeline
@@ -502,13 +505,13 @@ Add the environment variable **ECR_REPO** with the ECR front end repository URI.
 
 ---
 
->**NOTE:** Do NOT use :latest as this will give you an error.
+>**NOTE:** Do NOT use :latest as this will give you an error when running the "build" process.
 
 ---
 
 <img src="https://github.com/user-attachments/assets/0bb21ca3-2033-400c-a431-b5f2ecf7d65b" width="500">
 
-For the build specification:
+### I used the following for the build specification:
 
 ```
 version: 0.2
@@ -538,7 +541,6 @@ phases:
       - printf '[{\"name\":\"cloudmart-app\",\"imageUri\":\"%s\"}]' $REPOSITORY_URI:$imageTag > imagedefinitions.json
       - cat imagedefinitions.json
       - ls -l
-```
 
 env:
   exported-variables: ["imageTag"]
@@ -547,31 +549,51 @@ artifacts:
   files:
     - imagedefinitions.json
     - cloudmart-frontend.yaml
+```
 
-//--> The "project build creator" will ask you if you're okay to "Leave" the site, and suggests your options won't be saved, click "Leave".
+---
 
-![image](https://github.com/user-attachments/assets/02e20878-63c9-436d-b418-20cce7416b2a)
+>**NOTE:** The "project build creator" will ask you if you're okay to "Leave" the site, and suggests your options won't be saved, click "Leave".
 
+---
+
+<img src="https://github.com/user-attachments/assets/02e20878-63c9-436d-b418-20cce7416b2a" width="500">
+
+```
 Click "Create Pipeline"
+Set permission `AmazonElasticContainerRegistryPublicFullAccess` for role created by the pipeline process, in IAM.
 
-Set permission AmazonElasticContainerRegistryPublicFullAccess for role created by the pipeline process, in IAM.
-![image](https://github.com/user-attachments/assets/f09789d2-60d1-48af-98cd-5f8213fed46c)
+```
 
-Continue through by skipping the next few screens with "Next", it will be the Test and Deploy screens (likely).
+<img src="https://github.com/user-attachments/assets/f09789d2-60d1-48af-98cd-5f8213fed46c" width="500">
 
+```
+Continue through by skipping the next few screens with "Next", it will be the Test and Deploy screens.
 The pipeline will execute the build.
-![image](https://github.com/user-attachments/assets/865dd6d4-0e26-4361-8444-fc311e75ac49)
+```
 
-//---> The "build" portion will fail if you do not set up the permission in the role before running, if so, just run again.
+<img src="https://github.com/user-attachments/assets/865dd6d4-0e26-4361-8444-fc311e75ac49" width="500">
 
-Next we need to set up the deployment, click "Edit" on the pipeline page.
+---
 
-After "build" click "+Add Stage".
-![image](https://github.com/user-attachments/assets/2bf9a7bd-9d39-4aa7-83be-a71fac81976d)
-![image](https://github.com/user-attachments/assets/eea203f2-9ac1-44a8-9720-ebfbb51f3aea)
+>**NOTE:** The "build" portion will fail if you do not set up the permission in the role before running, if so, just run again after assigning the permission.
 
+---
+
+### Next I set up the deployment: 
+
+```
+Click "Edit" on the pipeline page
+After "build" click "+Add Stage"
+```
+
+<img src="https://github.com/user-attachments/assets/2bf9a7bd-9d39-4aa7-83be-a71fac81976d" width="500">
+<img src="https://github.com/user-attachments/assets/eea203f2-9ac1-44a8-9720-ebfbb51f3aea" width="500">
+
+```
 Click "add action group".
-![image](https://github.com/user-attachments/assets/97523f5e-2ab3-49e2-93d4-77bdb5307497)
+```
+<img src="https://github.com/user-attachments/assets/97523f5e-2ab3-49e2-93d4-77bdb5307497" width="500">
 
 Once all this information is entered, click "Create project"
 Title the project: cloudmartDeployToProduction
