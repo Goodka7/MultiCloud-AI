@@ -1069,15 +1069,15 @@ nano cloudmart-backend.yaml
 ### Bedrock AI Agent:
 <img src="https://github.com/user-attachments/assets/6830d70e-cab9-436f-8a40-a5e5c49973bf" width="300">
 
-Open AI Assistant:
+### Open AI Assistant:
 <img src="https://github.com/user-attachments/assets/0899df3b-569c-44c9-9f3b-397abb3e65f1" width="300">
 
 Here we have two functioning AI bots that are capable of handling customer queries and even cancel orders:
 
-<img src="https://github.com/user-attachments/assets/7db8b10a-891d-424a-a87d-299c57f69f83" width="500">
-<img src="https://github.com/user-attachments/assets/829fa8b3-20bf-4b2f-b0ed-90e5b83b5297" width="500">
-<img src="https://github.com/user-attachments/assets/008347bc-2576-4dc9-9bd9-a7f5d704c762" width="500">
-<img src="https://github.com/user-attachments/assets/74958021-b027-4808-af82-aa7a418235d9" width="500">
+<img src="https://github.com/user-attachments/assets/7db8b10a-891d-424a-a87d-299c57f69f83" width="600">
+<img src="https://github.com/user-attachments/assets/829fa8b3-20bf-4b2f-b0ed-90e5b83b5297" width="600">
+<img src="https://github.com/user-attachments/assets/008347bc-2576-4dc9-9bd9-a7f5d704c762" width="600">
+<img src="https://github.com/user-attachments/assets/74958021-b027-4808-af82-aa7a418235d9" width="600">
 
 ---
 
