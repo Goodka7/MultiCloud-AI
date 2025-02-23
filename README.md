@@ -300,7 +300,7 @@ spec:
       
 ---
 
->**NOTE:** I changed the "image:" line to the ":latest" URI Image from the ECR instance I created. This can be found by clicking on the backend image in ECR and clicking "copy URI". 
+>**NOTE:** I changed the "image:" line to the ":latest" URI Image from the ECR instance I created. This can be found by clicking on the backend registry in ECR and clicking "copy URI". 
 
 ---
 
@@ -389,7 +389,7 @@ spec:
 
 ---
 
->**NOTE:** I changed the "image:" line to the ":latest" URI Image from the ECR instance I created. This can be found by clicking on the frontend image in ECR and clicking "copy URI".
+>**NOTE:** I changed the "image:" line to the ":latest" URI Image from the ECR instance I created. This can be found by clicking on the frontend regisitry in ECR and clicking "copy URI".
 
 ---
 
@@ -432,7 +432,7 @@ git push -u origin main
 
 ### I generated a password token on GitHub for the `origin main` step of the script above
 
-<img src="https://github.com/user-attachments/assets/6ae9dfe9-a235-46e9-8fe8-29104c350a8b" width="800">
+<img src="https://github.com/user-attachments/assets/6ae9dfe9-a235-46e9-8fe8-29104c350a8b" width="300">
 
 Use the token in the password field.
 ![image](https://github.com/user-attachments/assets/f9e7ad8a-f98c-49ab-9501-8a44579a9f4a)
