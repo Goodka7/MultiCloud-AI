@@ -1614,4 +1614,5 @@ kubectl apply -f cloudmart-backend.yaml
 
 ### I was able to get all 3 sentiments that the Azure Language API gives
 <img src="https://github.com/user-attachments/assets/062a2012-e499-470d-8fbb-52c7e20c09c1" width="500">
+
 [Back to the top](#table-of-contents)
