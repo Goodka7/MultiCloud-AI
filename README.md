@@ -479,6 +479,7 @@ spec:
 
 ### I used the CLI to verify the services are running
 <img src="https://github.com/user-attachments/assets/d162aac9-c885-4304-84ca-b7ecc14eea29" width="800" />
+
 [Back to the top](#table-of-contents)
 ---
 
